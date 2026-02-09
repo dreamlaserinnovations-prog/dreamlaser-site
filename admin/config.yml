@@ -2,15 +2,16 @@ backend:
   name: git-gateway
   branch: main
 
+publish_mode: editorial_workflow
+
 media_folder: "uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "index.html"
-        label: "Homepage"
-        name: "homepage"
-        fields:
-          - { label: "Body", name: "body", widget: "markdown" }
+  - name: "uploads"
+    label: "Uploads"
+    folder: "uploads"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "File", name: "file", widget: "file" }
