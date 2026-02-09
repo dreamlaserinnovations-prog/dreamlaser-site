@@ -1,685 +1,220 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QP56LFFGXK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QP56LFFGXK');
-  gtag('config', 'AW-790089026');
-</script>
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dream Laser Innovations LLC | Industrial & High-End Laser Engraving</title>
-  <meta name="description" content="Professional industrial and high-end laser engraving for metals, wood, glass, stone, and polymers. Quotes within 24 hours." />
+  <title>Dream Laser Innovations LLC | Precision Laser Engraving</title>
+  <meta name="description" content="Precision laser engraving for industrial, contract, and custom applications. Metals, wood, glass, stone, and polymers. Request a quote within 24 hours." />
   <meta name="robots" content="index,follow" />
-
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
-    :root{
-      --bg:#070a0f;
-      --panel:#0e1420;
-      --panel2:#0b111b;
-      --text:#eef2f8;
-      --muted:#a9b4c6;
-      --line:rgba(255,255,255,.10);
-      --accent:#5aa7ff;
-      --good:#7cf1b8;
-      --shadow: 0 18px 40px rgba(0,0,0,.45);
-      --r:18px;
-      --max:1100px;
-      --pad:20px;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
-      background:
-        radial-gradient(1000px 520px at 20% 0%, rgba(90,167,255,.16), transparent 60%),
-        radial-gradient(800px 420px at 80% 10%, rgba(124,241,184,.10), transparent 55%),
-        var(--bg);
-      line-height:1.55;
-    }
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width:var(--max); margin:0 auto; padding: 0 var(--pad); }
-
-    /* Top nav */
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      background: rgba(7,10,15,.78);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-    }
-    .topbar .inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding: 14px 0;
-      gap:12px;
-    }
-    .brand{ display:flex; align-items:center; gap:10px; font-weight:850; letter-spacing:.2px; }
-    .logo{
-      width:34px; height:34px; border-radius:10px;
-      background: linear-gradient(135deg, rgba(90,167,255,.95), rgba(124,241,184,.85));
-      box-shadow: var(--shadow);
-      flex:0 0 auto;
-    }
-    .brand small{ display:block; color:var(--muted); font-weight:650; font-size:12px; margin-top:2px; }
-    .nav{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; color:var(--muted); font-size:14px; }
-    .nav a{ padding:8px 10px; border-radius:12px; }
-    .nav a:hover{ background: rgba(255,255,255,.06); color: var(--text); }
-
-    /* Buttons */
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding: 10px 14px;
-      border-radius: 14px;
-      font-weight: 800;
-      border: 1px solid rgba(90,167,255,.40);
-      background: rgba(90,167,255,.16);
-      box-shadow: 0 10px 26px rgba(90,167,255,.10);
-      cursor:pointer;
-    }
-    .btn:hover{ background: rgba(90,167,255,.22); }
-    .btn.secondary{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.06);
-      box-shadow:none;
-      font-weight:800;
-    }
-
-    /* Sections */
-    section{ padding: 28px 0; }
-    .card{
-      background: rgba(14,20,32,.80);
-      border: 1px solid var(--line);
-      border-radius: var(--r);
-      box-shadow: var(--shadow);
-    }
-    .divider{
-      height:1px; background: var(--line);
-      margin: 18px 0;
-    }
-    h1{
-      margin: 0 0 10px;
-      font-size: clamp(30px, 4vw, 44px);
-      letter-spacing: -.4px;
-      line-height: 1.08;
-    }
-    h2{
-      margin: 0;
-      font-size: 22px;
-      letter-spacing: -.2px;
-    }
-    .muted{ color: var(--muted); }
-    .tag{
-      display:inline-flex; align-items:center;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(124,241,184,.28);
-      background: rgba(124,241,184,.10);
-      font-weight: 800;
-      font-size: 13px;
-    }
-
-    /* HERO (image left, copy right) */
-    .hero{ padding: 42px 0 22px; }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 18px;
-      align-items:stretch;
-    }
-    @media (max-width: 900px){ .hero-grid{ grid-template-columns: 1fr; } .hero{ padding-top: 28px; } }
-
-    .hero-media{ padding: 14px; }
-    .hero-media .frame{
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      overflow:hidden;
-      aspect-ratio: 16/9;
-      position:relative;
-    }
-    .hero-media img{
-      width:100%; height:100%; object-fit:cover; display:block;
-      filter: contrast(1.03) saturate(1.02);
-    }
-    .hero-copy{ padding: 22px; }
-    .kicker{
-      display:inline-flex; align-items:center; gap:8px;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .35px;
-      margin-bottom: 10px;
-    }
-    .dot{
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--good);
-      box-shadow: 0 0 0 6px rgba(124,241,184,.12);
-    }
-    .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px; }
-    .hero-pills{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 16px;
-    }
-    @media (max-width: 900px){ .hero-pills{ grid-template-columns: 1fr; } }
-    .pill{
-      padding: 12px 14px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* Latest work cards */
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 12px;
-    }
-    @media (max-width: 900px){ .grid3{ grid-template-columns: 1fr; } }
-    .work-card{
-      overflow:hidden;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      display:flex;
-      flex-direction:column;
-    }
-    .work-card .img{
-      aspect-ratio: 16/10;
-      overflow:hidden;
-      background: rgba(0,0,0,.25);
-    }
-    .work-card img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .work-card .body{ padding: 14px; }
-    .work-card b{ display:block; margin-bottom: 6px; }
-    .work-card .meta{ color: var(--muted); font-size: 13px; }
-
-    /* Reviews + form split */
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 12px;
-    }
-    @media (max-width: 900px){ .split{ grid-template-columns: 1fr; } }
-
-    .review{
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      margin-top: 10px;
-    }
-    .stars{ letter-spacing:1px; color: rgba(124,241,184,.95); font-weight:900; }
-    .review p{ margin: 8px 0 0; color: var(--muted); }
-    .review b{ display:block; margin-top: 10px; }
-
-    /* Form */
-    form{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 10px;
-    }
-    @media (max-width: 900px){ form{ grid-template-columns: 1fr; } }
-    label{ display:block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
-    input, textarea{
-      width:100%;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(0,0,0,.25);
-      color: var(--text);
-      outline:none;
-    }
-    input:focus, textarea:focus{
-      border-color: rgba(90,167,255,.60);
-      box-shadow: 0 0 0 4px rgba(90,167,255,.12);
-    }
-    textarea{ min-height: 120px; resize: vertical; grid-column: 1 / -1; }
-    .full{ grid-column: 1 / -1; }
-    .form-actions{
-      display:flex; gap: 10px; flex-wrap:wrap; align-items:center;
-      grid-column: 1 / -1;
-      margin-top: 2px;
-    }
-    .fineprint{ color: var(--muted); font-size: 13px; }
-
-    /* FAQ */
-    .faq{ margin-top: 12px; }
-    details{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      border-radius: 16px;
-      padding: 12px 14px;
-      margin: 10px 0;
-    }
-    summary{ cursor:pointer; font-weight: 850; }
-    details p{ margin: 10px 0 0; color: var(--muted); }
-
-    /* Services list */
-    .services{ margin-top: 12px; }
-    .svc{
-      display:flex; align-items:center; justify-content:space-between;
-      gap: 12px;
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      margin: 10px 0;
-    }
-    .svc b{ font-size: 15px; }
-    .svc span{ display:block; color: var(--muted); font-size: 13px; margin-top: 2px; }
-
-    /* Bottom CTA band */
-    .cta-band{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items:stretch;
-      margin-top: 12px;
-    }
-    @media (max-width: 900px){ .cta-band{ grid-template-columns: 1fr; } }
-    .cta-band .media{
-      border-radius: 16px;
-      overflow:hidden;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      aspect-ratio: 16/11;
-    }
-    .cta-band .media img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .cta-band .panel{ padding: 18px; }
-
-    footer{
-      padding: 28px 0 54px;
-      border-top: 1px solid var(--line);
-      margin-top: 22px;
-      color: var(--muted);
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 16px;
-      align-items:start;
-    }
-    @media (max-width: 900px){ .footer-grid{ grid-template-columns: 1fr; } }
-    .links a{
-      display:inline-block;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      padding: 6px 10px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-    }
-    .links a:hover{ background: rgba(255,255,255,.07); }
+    :root{--bg:#0b0f14;--panel:#0f1620;--text:#e9eef5;--muted:#a8b3c3;--line:rgba(255,255,255,.12);--accent:#4aa3ff;--accent2:#7cf1b8;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px;--max:1100px;--pad:20px;}
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:radial-gradient(1200px 600px at 20% 0%,rgba(74,163,255,.18),transparent 60%),radial-gradient(900px 500px at 80% 10%,rgba(124,241,184,.10),transparent 55%),var(--bg);color:var(--text);line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .topbar .inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,rgba(74,163,255,.95),rgba(124,241,184,.85));box-shadow:var(--shadow);flex:0 0 auto}
+    .nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+    .nav a{padding:8px 10px;border-radius:12px}
+    .nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .cta{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:14px;font-weight:700;border:1px solid rgba(74,163,255,.35);background:rgba(74,163,255,.16);box-shadow:0 8px 20px rgba(74,163,255,.08)}
+    .cta:hover{background:rgba(74,163,255,.22)}
+    .cta.secondary{border:1px solid var(--line);background:rgba(255,255,255,.06);font-weight:700}
+    header.hero{padding:64px 0 26px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch}
+    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}header.hero{padding-top:38px}}
+    .card{background:rgba(15,22,32,.75);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-left{padding:28px}
+    .kicker{display:inline-flex;gap:8px;align-items:center;color:var(--muted);font-weight:650;font-size:13px;letter-spacing:.35px;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 6px rgba(124,241,184,.10)}
+    h1{margin:10px 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-.4px}
+    .sub{margin:0 0 18px;color:var(--muted);font-size:16px;max-width:70ch}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .mini{margin-top:12px;color:var(--muted);font-size:14px}
+    .tag{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px;border:1px solid rgba(124,241,184,.25);background:rgba(124,241,184,.10);color:rgba(233,238,245,.95)}
+    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    @media (max-width:900px){.trust-row{grid-template-columns:1fr}}
+    .pill{padding:12px 14px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--muted);font-size:14px}
+    .hero-right{padding:22px;display:flex;flex-direction:column;gap:14px;min-height:100%}
+    .stat{padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+    .stat b{display:block;font-size:16px;margin-bottom:4px;color:var(--text)}
+    .stat span{color:var(--muted);font-size:14px}
+    section{padding:26px 0}
+    h2{margin:0 0 10px;font-size:22px;letter-spacing:-.2px}
+    .muted{color:var(--muted)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width:900px){.two-col{grid-template-columns:1fr}}
+    .box{padding:18px}
+    ul{margin:8px 0 0 18px;color:var(--muted)} li{margin:6px 0}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    @media (max-width:900px){.gallery{grid-template-columns:1fr 1fr}}
+    @media (max-width:520px){.gallery{grid-template-columns:1fr}}
+    .ph{aspect-ratio:4/3;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.03);overflow:hidden;position:relative}
+    .ph img{width:100%;height:100%;object-fit:cover;display:block}
+    .ph .label{position:absolute;left:10px;bottom:10px;font-size:12px;font-weight:700;padding:6px 9px;border-radius:999px;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12)}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    @media (max-width:900px){.reviews{grid-template-columns:1fr}}
+    .quote{padding:16px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+    .quote .stars{letter-spacing:1px;color:rgba(124,241,184,.95)} .quote p{color:var(--muted);margin-top:8px} .quote b{color:var(--text)}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+    @media (max-width:900px){.steps{grid-template-columns:1fr 1fr}} @media (max-width:520px){.steps{grid-template-columns:1fr}}
+    .step{padding:16px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+    .num{width:34px;height:34px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(74,163,255,.16);border:1px solid rgba(74,163,255,.35);font-weight:800;margin-bottom:10px}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+    @media (max-width:900px){form{grid-template-columns:1fr}}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,textarea{width:100%;padding:12px 12px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.25);color:var(--text);outline:none}
+    textarea{min-height:120px;resize:vertical;grid-column:1/-1}
+    .full{grid-column:1/-1}
+    .form-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;grid-column:1/-1;margin-top:4px}
+    .fineprint{color:var(--muted);font-size:13px}
+    footer{padding:26px 0 48px;border-top:1px solid var(--line);margin-top:22px;color:var(--muted)}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:start}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    .links a{display:inline-block;margin-right:10px;padding:6px 10px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+    .links a:hover{background:rgba(255,255,255,.07)}
   </style>
 </head>
-
 <body>
   <div class="topbar">
-    <div class="wrap">
-      <div class="inner">
-        <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <div>
-            <div>Dream Laser Innovations LLC</div>
-            <small>Industrial • Contract • High-End Custom</small>
-          </div>
+    <div class="wrap"><div class="inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div id="companyName">Dream Laser Innovations LLC</div>
+          <div id="tagline" style="font-size:12px;color:var(--muted);font-weight:650;">Industrial • Contract • High-End Custom</div>
         </div>
-
-        <nav class="nav" aria-label="Primary navigation">
-          <a href="#work">Latest Work</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#quote">Get a Quote</a>
-          <a class="btn secondary" href="tel:+18126692033">Call/Text</a>
-        </nav>
       </div>
-    </div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#process">Process</a>
+        <a href="#quote">Request a Quote</a>
+        <a class="cta secondary" href="/admin/">Admin</a>
+      </nav>
+    </div></div>
   </div>
 
-  <section class="hero" id="top">
-    <div class="wrap">
-      <div class="hero-grid">
-        <div class="card hero-media">
-          <div class="frame">
-            <img src="work1.png" alt="Laser engraving close-up sample" onerror="this.style.display='none'">
-          </div>
-        </div>
-
-        <div class="card hero-copy">
-          <div class="kicker"><span class="dot"></span> Professional Industrial & High-End Laser Engraving</div>
-          <h1>Precision Metal Engraving for Manufacturers & Brands</h1>
-          <p class="muted">
-            Clean, repeatable marking on stainless, aluminum, coated metals, and more — plus wood, glass, stone, and polymers.
-            Built for tight tolerances and professional finish.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn" href="#quote">Get Your Professional Quote</a>
-            <a class="btn secondary" href="tel:+18126692033">Call/Text (812) 669-2033</a>
-            <span class="tag">Quotes within 24 hours</span>
-          </div>
-
-          <div class="hero-pills">
-            <div class="pill">Industrial-grade fiber laser systems</div>
-            <div class="pill">Sharp detail • high contrast</div>
-            <div class="pill">Short-run to contract-ready</div>
-          </div>
-        </div>
+  <header class="hero"><div class="wrap"><div class="hero-grid">
+    <div class="card hero-left">
+      <div class="kicker"><span class="dot"></span> <span id="heroKicker">Professional Industrial & High-End Laser Engraving</span></div>
+      <h1 id="heroTitle">Precision Laser Engraving for Industrial & Custom Applications</h1>
+      <p class="sub" id="heroSub">High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers — built for clean results, tight tolerances, and consistent quality.</p>
+      <div class="hero-actions">
+        <a class="cta" href="#quote">Request a Quote</a>
+        <a class="cta secondary" id="phoneCta" href="tel:+18126692033">Call / Text (812) 669-2033</a>
       </div>
+      <div class="mini"><span class="tag">We respond within 24 hours</span></div>
+      <div class="trust-row" id="trustRow"></div>
     </div>
-  </section>
+    <div class="card hero-right">
+      <div class="stat"><b>Trusted by Manufacturers & Brands</b><span class="muted">Precision marking that meets specs and looks professional.</span></div>
+      <div class="stat"><b>Materials</b><span>Stainless • Aluminum • Coated metals • Wood • Glass • Stone • Polymers</span></div>
+      <div class="stat"><b>Get started</b><span>Send details + artwork (optional). We’ll confirm feasibility, timeline, and pricing.</span></div>
+    </div>
+  </div></div></header>
 
-  <section id="work">
-    <div class="wrap">
-      <div class="card" style="padding:18px;">
-        <h2>Latest Work</h2>
-        <p class="muted">Uses your existing files: <b>work1.png</b> … <b>work16.png</b>.</p>
+  <section id="services"><div class="wrap"><div class="two-col">
+    <div class="card box"><h2>Services</h2><p class="muted">Industrial, contract, and custom engraving delivered with clean results and consistent execution.</p><ul id="servicesList"></ul></div>
+    <div class="card box"><h2>Materials We Engrave</h2><p class="muted">We tailor settings by substrate to maximize contrast, crispness, and repeatability.</p><ul id="materialsList"></ul></div>
+  </div></div></section>
 
-        <div class="grid3">
-          <div class="work-card">
-            <div class="img"><img src="work2.png" alt="Work sample 2" onerror="this.style.display='none'"></div>
-            <div class="body">
-              <b>Industrial part marking</b>
-              <div class="meta">Clean, spec-friendly marking with repeatable results.</div>
-            </div>
-          </div>
-          <div class="work-card">
-            <div class="img"><img src="work3.png" alt="Work sample 3" onerror="this.style.display='none'"></div>
-            <div class="body">
-              <b>High-detail logo engraving</b>
-              <div class="meta">Crisp edges and high contrast on metals.</div>
-            </div>
-          </div>
-          <div class="work-card">
-            <div class="img"><img src="work4.png" alt="Work sample 4" onerror="this.style.display='none'"></div>
-            <div class="body">
-              <b>Production-ready finishing</b>
-              <div class="meta">Optimized settings per material and coating.</div>
-            </div>
-          </div>
-        </div>
+  <section id="work"><div class="wrap"><div class="card box">
+    <h2>Recent Work</h2><p class="muted">Upload images in Admin → Media, then add them in Admin → Site Settings.</p>
+    <div class="gallery" id="galleryGrid" aria-label="Work gallery"></div>
+  </div></div></section>
 
-        <div class="grid3" style="margin-top:12px;">
-          <div class="work-card">
-            <div class="img"><img src="work5.png" alt="Work sample 5" onerror="this.style.display='none'"></div>
-            <div class="body">
-              <b>Wood & engineered materials</b>
-              <div class="meta">Sharp detail with controlled depth and burn.</div>
-            </div>
-          </div>
-          <div class="work-card">
-            <div class="img"><img src="work6.png" alt="Work sample 6" onerror="this.style.display='none'"></div>
-            <div class="body">
-              <b>Glass / subtle frost</b>
-              <div class="meta">Even, clean etch for a premium look.</div>
-            </div>
-          </div>
-          <div class="work-card">
-            <div class="img"><img src="work7.png" alt="Work sample 7" onerror="this.style.display='none'"></div>
-            <div class="body">
-              <b>Custom + short-run jobs</b>
-              <div class="meta">Fast turnaround and professional presentation.</div>
-            </div>
-          </div>
-        </div>
+  <section id="reviews"><div class="wrap"><div class="card box">
+    <h2>Reviews</h2><p class="muted">Keep 3–4 strong reviews. Real, specific, and short wins.</p>
+    <div class="reviews" id="reviewsGrid"></div>
+  </div></div></section>
 
+  <section id="process"><div class="wrap"><div class="card box">
+    <h2>How It Works</h2><p class="muted">Simple, clear, and fast—designed to reduce friction and get you to a quote.</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><b>Send details</b><div class="muted">Material, size, quantity, deadline, and any artwork (optional).</div></div>
+      <div class="step"><div class="num">2</div><b>Review proof + pricing</b><div class="muted">We confirm feasibility, timeline, and cost before production.</div></div>
+      <div class="step"><div class="num">3</div><b>Precision engraving</b><div class="muted">Settings tuned per substrate for crisp detail and consistency.</div></div>
+      <div class="step"><div class="num">4</div><b>Delivery / pickup</b><div class="muted">We coordinate the best option for your project and schedule.</div></div>
+    </div>
+  </div></div></section>
+
+  <section id="quote"><div class="wrap"><div class="card box">
+    <h2>Request a Quote</h2><p class="muted">Send project details below — we respond within 24 hours.</p>
+    <form name="quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html" enctype="multipart/form-data">
+      <input type="hidden" name="form-name" value="quote" />
+      <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
+      <div><label for="firstName">First name</label><input id="firstName" name="firstName" autocomplete="given-name" required /></div>
+      <div><label for="lastName">Last name</label><input id="lastName" name="lastName" autocomplete="family-name" required /></div>
+      <div><label for="company">Company (optional)</label><input id="company" name="company" autocomplete="organization" /></div>
+      <div><label for="phone">Phone number (optional)</label><input id="phone" name="phone" autocomplete="tel" inputmode="tel" /></div>
+      <div class="full"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+      <div class="full"><label for="details">Project details (material, size, quantity, deadline)</label><textarea id="details" name="details"></textarea></div>
+      <div class="full"><label for="file">Photo / File upload (optional — max 15MB)</label><input id="file" name="file" type="file" /></div>
+      <div class="form-actions">
+        <button class="cta" type="submit">Request a Quote</button>
+        <a class="cta secondary" id="phoneCta2" href="tel:+18126692033">Call / Text (812) 669-2033</a>
+        <span class="fineprint">Or email: <a id="emailLink" href="mailto:dreamlaserinnovations@gmail.com"><b id="emailText">dreamlaserinnovations@gmail.com</b></a></span>
       </div>
+    </form>
+  </div></div></section>
+
+  <footer><div class="wrap"><div class="footer-grid">
+    <div>
+      <b style="color:var(--text);" id="footerCompany">Dream Laser Innovations LLC</b><br/>
+      <span id="footerPhone">(812) 669-2033</span><br/>
+      <a id="footerEmail" href="mailto:dreamlaserinnovations@gmail.com">dreamlaserinnovations@gmail.com</a><br/>
+      <span id="footerAddr1">324 W Madison St</span><br/>
+      <span id="footerAddr2">Franklin, IN 46131</span>
+      <div style="margin-top:12px;color:var(--muted);font-size:13px;">© <span id="yearNow"></span> <span id="footerCompany2">Dream Laser Innovations LLC</span>.</div>
     </div>
-  </section>
-
-  <section id="reviews">
-    <div class="wrap">
-      <div class="card" style="padding:18px;">
-        <h2>Reviews + Quote Request</h2>
-        <p class="muted">Conversion-focused layout: reviews on the left, quote form on the right.</p>
-
-        <div class="split">
-          <div>
-            <div class="muted" style="font-weight:850;">REVIEWS</div>
-
-            <div class="review">
-              <div class="stars">★★★★★</div>
-              <p>“Fantastic quality, met all specs. Clean marking and consistent results.”</p>
-              <b>— Industrial Buyer</b>
-            </div>
-
-            <div class="review">
-              <div class="stars">★★★★★</div>
-              <p>“Professional communication and the finish looked great out of the box.”</p>
-              <b>— Manufacturing Lead</b>
-            </div>
-
-            <div class="review">
-              <div class="stars">★★★★★</div>
-              <p>“Fast turnaround and sharp detail. Will use again.”</p>
-              <b>— Small Business Owner</b>
-            </div>
-          </div>
-
-          <div id="quote">
-            <div class="muted" style="font-weight:850;">GET A QUOTE</div>
-            <p class="muted" style="margin-top:6px;">We respond within 24 hours. Include material, size, quantity, and deadline.</p>
-
-            <form
-              name="quote"
-              method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              action="/thank-you.html"
-              enctype="multipart/form-data">
-
-              <input type="hidden" name="form-name" value="quote" />
-              <p hidden>
-                <label>Don’t fill this out: <input name="bot-field" /></label>
-              </p>
-
-              <div>
-                <label for="firstName">First name</label>
-                <input id="firstName" name="firstName" autocomplete="given-name" required />
-              </div>
-
-              <div>
-                <label for="lastName">Last name</label>
-                <input id="lastName" name="lastName" autocomplete="family-name" required />
-              </div>
-
-              <div>
-                <label for="company">Company (optional)</label>
-                <input id="company" name="company" autocomplete="organization" />
-              </div>
-
-              <div>
-                <label for="phone">Phone (optional)</label>
-                <input id="phone" name="phone" autocomplete="tel" inputmode="tel" />
-              </div>
-
-              <div class="full">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required />
-              </div>
-
-              <div class="full">
-                <label for="details">Project details</label>
-                <textarea id="details" name="details" placeholder='Example: Stainless part marking, 2"×1" logo + serial, qty 50, needed by Feb 28.'></textarea>
-              </div>
-
-              <div class="full">
-                <label for="file">Upload (optional)</label>
-                <input id="file" name="file" type="file" />
-              </div>
-
-              <div class="form-actions">
-                <button class="btn" type="submit">Get a Quote</button>
-                <a class="btn secondary" href="tel:+18126692033">Call/Text</a>
-                <span class="fineprint">Or email: <a href="mailto:dreamlaserinnovations@gmail.com"><b>dreamlaserinnovations@gmail.com</b></a></span>
-              </div>
-            </form>
-
-            <p class="fineprint" style="margin-top:10px;">
-              Tip: If you have vector artwork (SVG, AI, DXF), attach it for the fastest quote.
-            </p>
-          </div>
-        </div>
-
-      </div>
+    <div class="links">
+      <a href="#" onclick="alert('Add your Privacy Policy page link later'); return false;">Privacy Policy</a>
+      <a href="#" onclick="alert('Add your Accessibility Statement page link later'); return false;">Accessibility Statement</a>
+      <a href="#" onclick="alert('Add your Terms & Conditions page link later'); return false;">Terms & Conditions</a>
+      <a href="#" onclick="alert('Add your Refund Policy page link later'); return false;">Refund Policy</a>
+      <div style="margin-top:12px;" class="muted">Built for speed • No monthly hosting fees</div>
     </div>
-  </section>
+  </div></div></footer>
 
-  <section id="faq">
-    <div class="wrap">
-      <div class="card" style="padding:18px;">
-        <h2>Frequently asked questions</h2>
-
-        <div class="faq">
-          <details>
-            <summary>What do you need to quote my job?</summary>
-            <p>Material, dimensions, quantity, deadline, and any artwork (optional). A clear photo helps if artwork isn’t available.</p>
-          </details>
-
-          <details>
-            <summary>Do you do industrial compliance or serial marking?</summary>
-            <p>Yes — serials, logos, asset tags, and compliance-style marking depending on substrate and finish requirements.</p>
-          </details>
-
-          <details>
-            <summary>What file types do you accept?</summary>
-            <p>SVG, DXF, AI/PDF vector, PNG/JPG photos, and simple sketches. If you upload a file, we’ll confirm it’s workable.</p>
-          </details>
-
-          <details>
-            <summary>How fast is turnaround?</summary>
-            <p>Most quotes within 24 hours. Production timing depends on material and quantity — we’ll confirm timeline before starting.</p>
-          </details>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="wrap">
-      <div class="card" style="padding:18px;">
-        <h2>Services</h2>
-        <p class="muted">Clean service list with clear quote buttons.</p>
-
-        <div class="services">
-          <div class="svc">
-            <div>
-              <b>Industrial Laser Engraving</b>
-              <span>Spec-friendly part marking, serials, logos, and tags.</span>
-            </div>
-            <a class="btn secondary" href="#quote">Get Quote</a>
-          </div>
-
-          <div class="svc">
-            <div>
-              <b>Precision Metal Engraving</b>
-              <span>Stainless, aluminum, anodized/coated metals.</span>
-            </div>
-            <a class="btn secondary" href="#quote">Get Quote</a>
-          </div>
-
-          <div class="svc">
-            <div>
-              <b>Glass Etching</b>
-              <span>Subtle frost, coasters, plaques, and branded gifts.</span>
-            </div>
-            <a class="btn secondary" href="#quote">Get Quote</a>
-          </div>
-
-          <div class="svc">
-            <div>
-              <b>Wood / Polymer Engraving</b>
-              <span>Controlled burn and crisp detail for premium finish.</span>
-            </div>
-            <a class="btn secondary" href="#quote">Get Quote</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="cta">
-    <div class="wrap">
-      <div class="card" style="padding:18px;">
-        <h2>Where innovation meets craft</h2>
-        <p class="muted">Final call-to-action section.</p>
-
-        <div class="cta-band">
-          <div class="media">
-            <img src="work8.png" alt="Laser engraving in progress" onerror="this.style.display='none'">
-          </div>
-          <div class="card panel" style="box-shadow:none;background:rgba(11,17,27,.75);">
-            <div class="kicker"><span class="dot"></span> Industrial & Contract Laser Engraving</div>
-            <p class="muted">Get a quote fast. We’ll confirm feasibility, timeline, and pricing before production.</p>
-            <div class="divider"></div>
-            <ul style="margin:0 0 12px 18px; color:var(--muted);">
-              <li>High-contrast marking tuned per substrate</li>
-              <li>Short runs + repeat production support</li>
-              <li>Professional communication + delivery options</li>
-            </ul>
-            <a class="btn" href="#quote">Get Started / Request Quote</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <b style="color:var(--text);">Dream Laser Innovations LLC</b><br/>
-          (812) 669-2033<br/>
-          <a href="mailto:dreamlaserinnovations@gmail.com">dreamlaserinnovations@gmail.com</a><br/>
-          Franklin, IN
-          <div style="margin-top:12px;color:var(--muted);font-size:13px;">
-            © 2026 Dream Laser Innovations LLC.
-          </div>
-        </div>
-
-        <div class="links">
-          <a href="#quote">Request a Quote</a>
-          <a href="#work">Latest Work</a>
-          <a href="#services">Services</a>
-          <a href="tel:+18126692033">Call/Text</a>
-
-          <div style="margin-top:12px;" class="muted">
-            Built for speed • Netlify Forms enabled
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-
+  <script>
+    document.getElementById('yearNow').textContent = new Date().getFullYear();
+    function escHtml(s){return String(s).replace(/[&<>"']/g,m=>({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[m]));}
+    function escAttr(s){return String(s).replace(/"/g,'&quot;');}
+    async function loadSite(){
+      try{
+        const res = await fetch('/data/site.json',{cache:'no-store'});
+        const d = await res.json();
+        const setText=(id,val)=>{const el=document.getElementById(id); if(el && val!=null) el.textContent=val;}
+        setText('companyName',d.companyName); setText('footerCompany',d.companyName); setText('footerCompany2',d.companyName);
+        setText('tagline',d.tagline); setText('heroKicker',d.heroKicker); setText('heroTitle',d.heroTitle); setText('heroSub',d.heroSub);
+        if(d.phone && d.phoneTel){
+          const p1=document.getElementById('phoneCta'); const p2=document.getElementById('phoneCta2');
+          if(p1){p1.textContent=`Call / Text ${d.phone}`; p1.href=`tel:${d.phoneTel}`;}
+          if(p2){p2.textContent=`Call / Text ${d.phone}`; p2.href=`tel:${d.phoneTel}`;}
+          setText('footerPhone',d.phone);
+        }
+        if(d.email){
+          const e1=document.getElementById('emailLink'); const e2=document.getElementById('footerEmail'); const eT=document.getElementById('emailText');
+          if(e1) e1.href=`mailto:${d.email}`; if(e2){e2.href=`mailto:${d.email}`; e2.textContent=d.email;} if(eT) eT.textContent=d.email;
+        }
+        if(Array.isArray(d.addressLines)){ setText('footerAddr1',d.addressLines[0]||''); setText('footerAddr2',d.addressLines[1]||''); }
+        const trust=document.getElementById('trustRow'); if(trust && Array.isArray(d.trustPills)){ trust.innerHTML=d.trustPills.slice(0,3).map(x=>`<div class="pill">${escHtml(x)}</div>`).join(''); }
+        const sList=document.getElementById('servicesList'); if(sList && Array.isArray(d.services)){ sList.innerHTML=d.services.map(x=>`<li>${escHtml(x)}</li>`).join(''); }
+        const mList=document.getElementById('materialsList'); if(mList && Array.isArray(d.materials)){ mList.innerHTML=d.materials.map(x=>`<li>${escHtml(x)}</li>`).join(''); }
+        const gal=document.getElementById('galleryGrid'); if(gal && Array.isArray(d.gallery)){
+          gal.innerHTML=d.gallery.slice(0,12).map(it=>{const img=it.image?`<img src="${escAttr(it.image)}" alt="${escAttr(it.label||'Work sample')}">`:''; return `<div class="ph">${img}<div class="label">${escHtml(it.label||'')}</div></div>`;}).join('');
+        }
+        const rev=document.getElementById('reviewsGrid'); if(rev && Array.isArray(d.reviews)){
+          rev.innerHTML=d.reviews.slice(0,3).map(r=>`<div class="quote"><div class="stars">★★★★★</div><p>${escHtml(r.text||'')}</p><b>— ${escHtml(r.name||'')}</b></div>`).join('');
+        }
+      }catch(e){console.warn('Site data load failed',e);}
+    }
+    loadSite();
+  </script>
 </body>
 </html>
