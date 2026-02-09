@@ -6,13 +6,11 @@ media_folder: "uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "site"
-    label: "Site Files"
+  - name: "pages"
+    label: "Pages"
     files:
-      - label: "Homepage (index.html)"
+      - file: "index.html"
+        label: "Homepage"
         name: "homepage"
-        file: "index.html"
         fields:
-          - label: "Edit HTML"
-            name: "body"
-            widget: "text"
+          - { label: "Body", name: "body", widget: "markdown" }
