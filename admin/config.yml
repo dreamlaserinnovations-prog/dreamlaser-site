@@ -13,5 +13,5 @@ collections:
         label: "Homepage"
         name: "homepage"
         fields:
-          - { label: "Title", name: "title", widget: "hidden", default: "Homepage" }
+          - { label: "Title", name: "title", widget: "string", required: false }
           - { label: "Body", name: "body", widget: "text" }
