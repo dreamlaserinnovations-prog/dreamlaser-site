@@ -6,12 +6,16 @@ media_folder: "uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "site"
+    label: "Site Pages"
     files:
       - file: "index.html"
-        label: "Homepage"
+        label: "Homepage (HTML)"
         name: "homepage"
         fields:
-          - { label: "Title", name: "title", widget: "string", required: false }
-          - { label: "Body", name: "body", widget: "text" }
+          - { label: "HTML", name: "body", widget: "text" }
+      - file: "thank-you.html"
+        label: "Thank You Page (HTML)"
+        name: "thankyou"
+        fields:
+          - { label: "HTML", name: "body", widget: "text" }
