@@ -107,6 +107,46 @@
     @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
     .links a{display:inline-block;margin-right:10px;padding:6px 10px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
     .links a:hover{background:rgba(255,255,255,.07)}
+/* Footer logo */
+.footer-logo{
+  width: 70px;
+  height: auto;
+  display: block;
+  margin: 0 0 10px 0;
+  opacity: 0.95;
+}
+
+/* Hero logo */
+.hero-logo-slot{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 10px 0 0;
+}
+
+.hero-logo{
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+}
+/* Logo card under right hero */
+.logo-card{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 22px;
+}
+
+/* Logo image */
+.hero-logo{
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+}
+
+
   </style>
 </head>
 <body>
@@ -131,8 +171,17 @@
 
       <div class="micro">We respond within 24 hours</div>
     </div>
+  <!-- Logo card under hero -->
+<div class="card logo-card">
+  <img 
+    src="/uploads/logo.png"
+    alt="Dream Laser Innovations LLC logo"
+    class="hero-logo"
+  >
+</div>
 
-  </div>
+
+</div>
 
   <!-- BELOW HERO: THE TWO CARDS (split) -->
   <div class="wrap hero-cards">
@@ -196,13 +245,16 @@
 
   <footer><div class="wrap"><div class="footer-grid">
     <div>
-      <b style="color:var(--text);" id="footerCompany">Dream Laser Innovations LLC</b><br/>
+<br/><img src="/uploads/logo.png" alt="Dream Laser Innovations LLC logo" class="footer-logo" loading="lazy">
+      <b style="color:var(--text);" id="footerCompany">Dream Laser Innovations LLC</b>
+
       <span id="footerPhone">(812) 669-2033</span><br/>
       <a id="footerEmail" href="mailto:dreamlaserinnovations@gmail.com">dreamlaserinnovations@gmail.com</a><br/>
       <span id="footerAddr1">324 W Madison St</span><br/>
       <span id="footerAddr2">Franklin, IN 46131</span>
       <div style="margin-top:12px;color:var(--muted);font-size:13px;">© <span id="yearNow"></span> <span id="footerCompany2">Dream Laser Innovations LLC</span>.</div>
     </div>
+
     <div class="links">
       <a href="#" onclick="alert('Add your Privacy Policy page link later'); return false;">Privacy Policy</a>
       <a href="#" onclick="alert('Add your Accessibility Statement page link later'); return false;">Accessibility Statement</a>
@@ -210,7 +262,9 @@
       <a href="#" onclick="alert('Add your Refund Policy page link later'); return false;">Refund Policy</a>
       <div style="margin-top:12px;" class="muted">Built for speed • No monthly hosting fees</div>
     </div>
-  </div></div></footer>
+  </div>
+</div>
+</footer>
 
   <script>
     document.getElementById('yearNow').textContent = new Date().getFullYear();
