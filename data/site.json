@@ -1,21 +1,14 @@
 {
+  "trustPills": [
+    "Industrial-grade fiber laser systems",
+    "Tight tolerances & repeatable results",
+    "Short-run to contract-ready capability"
+  ],
+  "heroSub": "High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers — built for clean results, tight tolerances, and consistent quality.",
   "companyName": "Dream Laser Innovations LLC",
-  "tagline": "Industrial \u2022 Contract \u2022 High-End Custom",
-  "heroKicker": "Professional Industrial & High-End Laser Engraving",
-  "heroTitle": "Precision Laser Engraving for Industrial & Custom Applications",
-  "heroSub": "High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers \u2014 built for clean results, tight tolerances, and consistent quality.",
-  "phone": "+1 (812) 669-2033",
-  "phoneTel": "+18126692033",
-  "email": "dreamlaserinnovations@gmail.com",
   "addressLines": [
     "324 W Madison St",
     "Franklin, IN 46131"
-  ],
-  "services": [
-    "Industrial laser engraving & part marking",
-    "Precision metal engraving",
-    "Contract / manufacturing support",
-    "Custom logos, serials, and compliance markings"
   ],
   "materials": [
     "Stainless steel & aluminum",
@@ -23,10 +16,35 @@
     "Hardwood & engineered wood",
     "Glass, stone, and polymers"
   ],
-  "trustPills": [
-    "Industrial-grade fiber laser systems",
-    "Tight tolerances & repeatable results",
-    "Short-run to contract-ready capability"
+  "heroKicker": "Professional Industrial & High-End Laser Engraving",
+  "phoneTel": "+18126692033",
+  "phone": "+1 (812) 669-2033",
+  "tagline": "Industrial • Contract • High-End Custom",
+  "gallery": [
+    {
+      "image": "/uploads/work19.png",
+      "label": "Precision Fiber Laser Engraving"
+    },
+    {
+      "image": "/uploads/work8.png",
+      "label": "Industrial-Grade Precision Engraving"
+    },
+    {
+      "image": "/uploads/work7.png",
+      "label": "Advanced Fiber Laser Engraving Technology"
+    },
+    {
+      "image": "/uploads/work11.png",
+      "label": "Engineered Precision. Flawless Results."
+    },
+    {
+      "image": "/uploads/work9.png",
+      "label": "Micro-Detail Laser Fiber Engraving"
+    },
+    {
+      "image": "/uploads/work1.png",
+      "label": "Where Precision Meets Craftsmanship"
+    }
   ],
   "reviews": [
     {
@@ -42,30 +60,12 @@
       "text": "Fast turnaround and the custom piece turned out perfectly."
     }
   ],
-  "gallery": [
-    {
-      "image": "",
-      "label": "Add image 1"
-    },
-    {
-      "image": "",
-      "label": "Add image 2"
-    },
-    {
-      "image": "",
-      "label": "Add image 3"
-    },
-    {
-      "image": "",
-      "label": "Add image 4"
-    },
-    {
-      "image": "",
-      "label": "Add image 5"
-    },
-    {
-      "image": "",
-      "label": "Add image 6"
-    }
-  ]
+  "email": "dreamlaserinnovations@gmail.com",
+  "services": [
+    "Industrial laser engraving & part marking",
+    "Precision metal engraving",
+    "Contract / manufacturing support",
+    "Custom logos, serials, and compliance markings"
+  ],
+  "heroTitle": "Precision Laser Engraving for Industrial & Custom Applications"
 }
