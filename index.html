@@ -8,6 +8,37 @@
   <meta name="robots" content="index,follow" />
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+.hero-media{
+  border-radius: 18px;
+  overflow:hidden;
+  background:#0b0f14;
+  min-height: 360px;          /* makes it “taller” */
+}
+.hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;           /* fills nicely */
+  display:block;
+}
+.hero-cards{
+  margin-top: 18px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-cards{ grid-template-columns: 1fr; }
+  .hero-media{ min-height: 240px; }
+}
+
+
     :root{--bg:#0b0f14;--panel:#0f1620;--text:#e9eef5;--muted:#a8b3c3;--line:rgba(255,255,255,.12);--accent:#4aa3ff;--accent2:#7cf1b8;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px;--max:1100px;--pad:20px;}
     *{box-sizing:border-box} html,body{height:100%}
     body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:radial-gradient(1200px 600px at 20% 0%,rgba(74,163,255,.18),transparent 60%),radial-gradient(900px 500px at 80% 10%,rgba(124,241,184,.10),transparent 55%),var(--bg);color:var(--text);line-height:1.55}
@@ -79,44 +110,44 @@
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="wrap"><div class="inner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <div id="companyName">Dream Laser Innovations LLC</div>
-          <div id="tagline" style="font-size:12px;color:var(--muted);font-weight:650;">Industrial • Contract • High-End Custom</div>
-        </div>
+<section class="hero">
+  <div class="wrap hero-grid">
+
+    <!-- LEFT: BIG IMAGE -->
+    <div class="hero-media">
+      <img src="workX.png" alt="Laser engraving on stone" />
+    </div>
+
+    <!-- RIGHT: BIG HEADLINE -->
+    <div class="hero-copy">
+      <div class="pill">PROFESSIONAL INDUSTRIAL & HIGH-END LASER ENGRAVING</div>
+      <h1>Precision Laser Engraving for Industrial & Custom Applications</h1>
+      <p>High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers — built for clean results, tight tolerances, and consistent quality.</p>
+
+      <div class="cta-row">
+        <a class="cta" href="#quote">Request a Quote</a>
+        <a class="cta secondary" href="tel:+18126692033">Call / Text +1 (812) 669-2033</a>
       </div>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#process">Process</a>
-        <a href="#quote">Request a Quote</a>
-        <a class="cta secondary" href="/admin/">Admin</a>
-      </nav>
-    </div></div>
+
+      <div class="micro">We respond within 24 hours</div>
+    </div>
+
   </div>
 
-  <header class="hero"><div class="wrap"><div class="hero-grid">
-    <div class="card hero-left">
-      <div class="kicker"><span class="dot"></span> <span id="heroKicker">Professional Industrial & High-End Laser Engraving</span></div>
-      <h1 id="heroTitle">Precision Laser Engraving for Industrial & Custom Applications</h1>
-      <p class="sub" id="heroSub">High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers — built for clean results, tight tolerances, and consistent quality.</p>
-      <div class="hero-actions">
-        <a class="cta" href="#quote">Request a Quote</a>
-        <a class="cta secondary" id="phoneCta" href="tel:+18126692033">Call / Text (812) 669-2033</a>
-      </div>
-      <div class="mini"><span class="tag">We respond within 24 hours</span></div>
-      <div class="trust-row" id="trustRow"></div>
+  <!-- BELOW HERO: THE TWO CARDS (split) -->
+  <div class="wrap hero-cards">
+    <div class="card">
+      <h3>Trusted by Manufacturers & Brands</h3>
+      <p>Precision marking that meets specs and looks professional.</p>
+      <div class="muted"><b>Materials:</b> Stainless • Aluminum • Coated metals • Wood • Glass • Stone • Polymers</div>
     </div>
-    <div class="card hero-right">
-      <div class="stat"><b>Trusted by Manufacturers & Brands</b><span class="muted">Precision marking that meets specs and looks professional.</span></div>
-      <div class="stat"><b>Materials</b><span>Stainless • Aluminum • Coated metals • Wood • Glass • Stone • Polymers</span></div>
-      <div class="stat"><b>Get started</b><span>Send details + artwork (optional). We’ll confirm feasibility, timeline, and pricing.</span></div>
+
+    <div class="card">
+      <h3>Get started</h3>
+      <p>Send details + artwork (optional). We’ll confirm feasibility, timeline, and pricing.</p>
     </div>
-  </div></div></header>
+  </div>
+</section>
 
   <section id="services"><div class="wrap"><div class="two-col">
     <div class="card box"><h2>Services</h2><p class="muted">Industrial, contract, and custom engraving delivered with clean results and consistent execution.</p><ul id="servicesList"></ul></div>
@@ -124,12 +155,12 @@
   </div></div></section>
 
   <section id="work"><div class="wrap"><div class="card box">
-    <h2>Recent Work</h2><p class="muted">Upload images in Admin → Media, then add them in Admin → Site Settings.</p>
+    
     <div class="gallery" id="galleryGrid" aria-label="Work gallery"></div>
   </div></div></section>
 
   <section id="reviews"><div class="wrap"><div class="card box">
-    <h2>Reviews</h2><p class="muted">Keep 3–4 strong reviews. Real, specific, and short wins.</p>
+   
     <div class="reviews" id="reviewsGrid"></div>
   </div></div></section>
 
