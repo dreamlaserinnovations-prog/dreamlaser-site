@@ -1,0 +1,8 @@
+{
+  "name": "dreamlaserinnovations-site",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "dev": "npx @11ty/eleventy --serve"
+  }
+}
