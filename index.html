@@ -262,7 +262,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </form>
   </div></div></section>
 
-  <footer><div class="wrap"><div class="footer-grid">
+  
+  <!-- Latest News (auto-pulls newest 3 posts from /feed.xml) -->
+  <section class="latest-news" id="latest-news">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2>Latest News</h2>
+          <div class="muted">Fresh tips, material spotlights, and real jobs from Franklin, IN.</div>
+        </div>
+        <a class="seeall" href="/blog.html">See all posts →</a>
+      </div>
+
+      <div id="homePosts" class="post-grid" style="margin-top:14px;"></div>
+      <p id="homePostsLoading" class="muted">Loading posts…</p>
+    </div>
+  </section>
+<footer><div class="wrap"><div class="footer-grid">
     <div>
 <br/><img src="/uploads/logo.png" alt="Dream Laser Innovations LLC logo" class="footer-logo" loading="lazy">
       <b style="color:var(--text);" id="footerCompany">Dream Laser Innovations LLC</b>
@@ -320,5 +336,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
     loadSite();
   </script>
+
+  <script>
+  (function(){
+    const FEED_CANDIDATES = ["/feed.xml","/feed.rss","https://www.dreamlaserinnovations.com/feed.xml"];
+    const DEFAULT_IMG = "/images/instagram-blog-template.jpg";
+    const el = document.getElementById("homePosts");
+    const loading = document.getElementById("homePostsLoading");
+    if(!el || !loading) return;
+
+    function getText(item, tag){
+      const n = item.getElementsByTagName(tag)[0];
+      return n ? (n.textContent || "").trim() : "";
+    }
+    function getImage(item){
+      const enclosure = item.getElementsByTagName("enclosure")[0];
+      if(enclosure && enclosure.getAttribute("url")) return enclosure.getAttribute("url");
+      const media = item.getElementsByTagName("media:content")[0];
+      if(media && media.getAttribute("url")) return media.getAttribute("url");
+      return DEFAULT_IMG;
+    }
+    function fmtDate(pubDateText){
+      try{
+        const d = new Date(pubDateText);
+        return d.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"numeric" });
+      }catch(e){ return ""; }
+    }
+    function card(p){
+      return `
+        <a class="post-card" href="${p.link}">
+          <div class="img"><img src="${p.img}" alt=""></div>
+          <div class="body">
+            <div class="meta"><span class="badge">New</span><span>${fmtDate(p.pubDate)}</span></div>
+            <h3>${p.title}</h3>
+            <p>${p.desc}</p>
+            <div class="footer"><span class="muted">Dream Laser Innovations</span><span class="read">Read →</span></div>
+          </div>
+        </a>
+      `;
+    }
+
+    async function fetchFeed(){
+      for(const url of FEED_CANDIDATES){
+        try{
+          const res = await fetch(url, {cache:"no-store"});
+          if(!res.ok) continue;
+          return await res.text();
+        }catch(e){}
+      }
+      return null;
+    }
+
+    (async function(){
+      const xmlText = await fetchFeed();
+      loading.style.display = "none";
+      if(!xmlText) return;
+
+      const doc = new DOMParser().parseFromString(xmlText, "text/xml");
+      const items = Array.from(doc.getElementsByTagName("item"));
+      const posts = items.map(it => ({
+        title: getText(it,"title") || "Untitled",
+        link: getText(it,"link"),
+        desc: getText(it,"description"),
+        pubDate: getText(it,"pubDate"),
+        img: getImage(it)
+      })).sort((a,b)=> new Date(b.pubDate) - new Date(a.pubDate))
+        .slice(0,3);
+
+      el.innerHTML = posts.map(card).join("");
+    })();
+  })();
+  </script>
+
 </body>
 </html>

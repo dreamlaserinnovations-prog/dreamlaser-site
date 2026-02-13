@@ -3,69 +3,145 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Blog | Dream Laser Innovations</title>
-  <meta name="description" content="Laser engraving tips, materials, and industrial use cases near Franklin, IN." />
+  <meta name="description" content="Guides, material spotlights, and real-world laser engraving examples from Franklin, IN." />
 
-  <!-- IMPORTANT: use leading slash for reliability -->
-  <link rel="stylesheet" href="/css/styles.css">
+  <!-- Shared blog styles -->
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <!-- Social preview -->
+  <meta property="og:title" content="Dream Laser Innovations Blog" />
+  <meta property="og:description" content="Laser engraving tips and industrial use cases near Franklin, IN." />
+  <meta property="og:type" content="website" />
 </head>
 
-<body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="brand" href="/index.html">
-        <img class="brand__logo" src="/images/dli-logo.png" alt="Dream Laser Innovations logo">
-        <span class="brand__name">Dream Laser Innovations</span>
-      </a>
-
-      <nav class="nav">
-        <a href="/index.html">Home</a>
-        <a href="/services.html">Services</a>
-        <a class="active" href="/blog.html">Blog</a>
-        <a class="nav__cta" href="/quote.html">Request a Quote</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="blog-hero">
-      <h1>Dream Laser Innovations Blog</h1>
-      <p class="sub">
-        Guides, material spotlights, and real-world engraving examples from Franklin, IN.
-      </p>
-    </section>
-
-    <!-- BLOG FEED GRID -->
-    <section class="card-grid">
-
-      <!-- CARD 1 (duplicate this block per post) -->
-      <a class="card" href="/blog-laser-engraving-electrical-tags.html">
-        <img src="/images/blog/electrical-tags-hero.jpg" alt="Laser engraving electrical panel tags">
-        <div class="card-body">
-          <div class="card-meta">Feb 11, 2026 · Franklin, IN</div>
-          <h2>Laser Engraving for Electrical Panel Tags in Franklin, IN</h2>
-          <p>What to send for a fast quote, stainless vs aluminum options, and durability tips.</p>
-          <span class="card-link">Read more →</span>
-        </div>
-      </a>
-
-      <!-- Add more cards here -->
-
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div>
-        <strong>Dream Laser Innovations LLC</strong><br>
-        Franklin, IN · Serving Central Indiana<br>
-        <a href="tel:+13172969625">(317) 296-9625</a> · <a href="tel:+18126692033">(812) 669-2033</a><br>
-        <a href="mailto:dreamlaserinnovations@gmail.com">dreamlaserinnovations@gmail.com</a>
+<body class="blog">
+  <div class="topbar">
+    <div class="wrap inner">
+      <div class="brand">
+        <img src="/images/dli-logo-64.png" alt="Dream Laser Innovations logo" onerror="this.style.display='none'">
+        <div>Dream Laser Innovations</div>
       </div>
-      <div class="footer-note">© <span id="y"></span> Dream Laser Innovations</div>
+      <div class="nav">
+        <a href="/">Home</a>
+        <a href="/#services">Services</a>
+        <a class="cta secondary" href="/quote.html">Request a Quote</a>
+      </div>
     </div>
-    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
-  </footer>
+  </div>
+
+  <section class="blog-hero">
+    <div class="wrap">
+      <h1>Dream Laser Innovations Blog</h1>
+      <p>Guides, material spotlights, and real-world engraving examples from <strong>Franklin, IN</strong> and surrounding areas. Click a post to read the full article.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div id="posts" class="post-grid" aria-live="polite"></div>
+      <p id="loading" class="muted">Loading posts…</p>
+      <p id="empty" class="muted" style="display:none;">No posts yet. Check back soon.</p>
+    </div>
+  </section>
+
+  <script>
+  (function() {
+    const FEED_CANDIDATES = [
+      "/feed.xml",
+      "/feed.rss",
+      "https://www.dreamlaserinnovations.com/feed.xml"
+    ];
+
+    const DEFAULT_IMG = "/images/instagram-blog-template.jpg"; // safe default until RSS includes per-post images
+
+    const postsEl = document.getElementById("posts");
+    const loadingEl = document.getElementById("loading");
+    const emptyEl = document.getElementById("empty");
+
+    function fmtDate(pubDateText){
+      try{
+        const d = new Date(pubDateText);
+        return d.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"numeric" });
+      }catch(e){
+        return pubDateText || "";
+      }
+    }
+
+    function getText(el, tag){
+      const n = el.getElementsByTagName(tag)[0];
+      return n ? (n.textContent || "").trim() : "";
+    }
+
+    function getImage(item){
+      // Try <enclosure url="..."> or media:content, otherwise fallback
+      const enclosure = item.getElementsByTagName("enclosure")[0];
+      if(enclosure && enclosure.getAttribute("url")) return enclosure.getAttribute("url");
+      const media = item.getElementsByTagName("media:content")[0];
+      if(media && media.getAttribute("url")) return media.getAttribute("url");
+      return DEFAULT_IMG;
+    }
+
+    function card({title, link, desc, pubDate, img}){
+      const safeTitle = title || "Untitled";
+      const safeDesc = desc || "";
+      const date = fmtDate(pubDate);
+      return `
+        <a class="post-card" href="${link}">
+          <div class="img"><img src="${img}" alt=""></div>
+          <div class="body">
+            <div class="meta">
+              <span class="badge">New</span>
+              <span>${date}</span>
+            </div>
+            <h3>${safeTitle}</h3>
+            <p>${safeDesc}</p>
+            <div class="footer">
+              <span class="muted">Dream Laser Innovations</span>
+              <span class="read">Read →</span>
+            </div>
+          </div>
+        </a>
+      `;
+    }
+
+    async function fetchFirstWorkingFeed(){
+      for(const url of FEED_CANDIDATES){
+        try{
+          const res = await fetch(url, {cache:"no-store"});
+          if(!res.ok) continue;
+          const text = await res.text();
+          return text;
+        }catch(e){}
+      }
+      return null;
+    }
+
+    async function run(){
+      const xmlText = await fetchFirstWorkingFeed();
+      loadingEl.style.display = "none";
+
+      if(!xmlText){ emptyEl.style.display="block"; return; }
+
+      const doc = new DOMParser().parseFromString(xmlText, "text/xml");
+      const items = Array.from(doc.getElementsByTagName("item"));
+
+      if(!items.length){ emptyEl.style.display="block"; return; }
+
+      // newest first
+      const posts = items.map(it => ({
+        title: getText(it, "title"),
+        link: getText(it, "link"),
+        desc: getText(it, "description"),
+        pubDate: getText(it, "pubDate"),
+        img: getImage(it)
+      })).sort((a,b)=> new Date(b.pubDate) - new Date(a.pubDate));
+
+      postsEl.innerHTML = posts.map(card).join("");
+    }
+
+    run();
+  })();
+  </script>
 </body>
 </html>
