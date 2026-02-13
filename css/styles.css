@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fb;
+  color: #111;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.blog-card a {
+  color: #0b63ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.post-title {
+  font-size: 44px;
+  margin: 10px 0 10px;
+}
+
+.post-date {
+  color: #777;
+  margin-bottom: 25px;
+}
