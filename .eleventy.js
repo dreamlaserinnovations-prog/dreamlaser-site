@@ -1,6 +1,9 @@
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
+eleventyConfig.addPassthroughCopy({ "uploads": "uploads" });
+eleventyConfig.addPassthroughCopy({ "work1.png": "work1.png" });
+
 
   // Date filter
   eleventyConfig.addFilter("date", (dateObj, format = "MMM dd, yyyy", zone = "utc") => {
