@@ -1,3 +1,11 @@
+---
+title: "Elevate Your Brand with Precision Engraved Metal Products"
+layout: layouts/post.njk
+permalink: "/posts/20260215-075117-elevate-your-brand-with-engraved-metal-products.html"
+excerpt: "In the bustling world of business, making a lasting impression is paramount. As a company based in Franklin, Indiana, dedicated to creating high-quality branded metal products, we…"
+image: "/images/blog/Work4.png"
+date: 2026-02-15T07:51:17-05:00
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>

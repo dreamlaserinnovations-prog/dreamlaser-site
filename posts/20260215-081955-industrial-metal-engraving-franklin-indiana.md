@@ -1,3 +1,11 @@
+---
+title: "Introduction to Industrial Metal Engraving"
+layout: layouts/post.njk
+permalink: "/posts/20260215-081955-industrial-metal-engraving-franklin-indiana.html"
+excerpt: "In the heart of Franklin, Indiana, our laser engraving company specializes in providing precise and durable industrial metal engraving solutions. Whether you need equipment tags, …"
+image: "/images/blog/IMG_5158.JPG"
+date: 2026-02-15T08:19:55-05:00
+---
 <h2>Introduction to Industrial Metal Engraving</h2>
 <p>In the heart of Franklin, Indiana, our laser engraving company specializes in providing precise and durable industrial metal engraving solutions. Whether you need equipment tags, safety labels, or asset identifiers, our advanced laser technology ensures high-quality results that withstand harsh environments and demanding conditions.</p>
 

@@ -1,3 +1,10 @@
+---
+title: "Elevating Metal to Art: Precision Decorative Engraving in Franklin, Indiana"
+layout: layouts/post.njk
+permalink: "/posts/decorative-metal-engraving-franklin-indiana.html"
+excerpt: "In the world of luxury craftsmanship, true excellence lies in the details. At the heart of Franklin, Indiana, a legacy of precision, artistry, and refinement is being etched—liter…"
+image: "/images/blog/IMG_5095 (1).JPG"
+---
 <article>
   <header>
     <h1>Elevating Metal to Art: Precision Decorative Engraving in Franklin, Indiana</h1>

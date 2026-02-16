@@ -1,3 +1,10 @@
+---
+title: "The Art of Precision: Collector-Grade Engraving on Premium Metals"
+layout: layouts/post.njk
+permalink: "/posts/precision-engraving-premium-metals.html"
+excerpt: "Elevating stainless steel, titanium, and fine alloys into heirloom-quality works of art"
+image: "/images/blog/IMG_5111.JPG"
+---
 <article>
   <header>
     <h1>The Art of Precision: Collector-Grade Engraving on Premium Metals</h1>

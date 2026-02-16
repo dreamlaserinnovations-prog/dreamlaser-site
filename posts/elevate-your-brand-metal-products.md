@@ -1,3 +1,10 @@
+---
+title: "Elevate Your Brand with High-Quality Engraved Metal Products"
+layout: layouts/post.njk
+permalink: "/posts/elevate-your-brand-metal-products.html"
+excerpt: "In the competitive world of business, standing out is not just an option—it’s a necessity. At our laser engraving company based in Franklin, Indiana, we specialize in transforming…"
+image: "/images/blog/IMG_5115.JPG"
+---
 <h1>Elevate Your Brand with High-Quality Engraved Metal Products</h1>
 <p>In the competitive world of business, standing out is not just an option—it’s a necessity. At our laser engraving company based in Franklin, Indiana, we specialize in transforming ordinary metal into extraordinary branded products that not only represent your business but also leave a lasting impression.</p>
 

@@ -1,3 +1,11 @@
+---
+title: "Enhancing Industrial Efficiency with Precision Metal Engraving in Franklin, Indiana"
+layout: layouts/post.njk
+permalink: "/posts/20260215-104517-industrial-metal-engraving-franklin-indiana.html"
+excerpt: "In the heart of Franklin, Indiana, our laser engraving company specializes in delivering high-quality industrial metal engraving solutions tailored to meet the demanding needs of …"
+image: "/images/blog/IMG_5191.JPG"
+date: 2026-02-15T10:45:17-05:00
+---
 <!doctype html>
 <html lang="en">
 <head>

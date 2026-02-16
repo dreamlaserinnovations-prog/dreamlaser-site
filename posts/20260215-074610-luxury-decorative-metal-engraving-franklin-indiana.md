@@ -1,3 +1,11 @@
+---
+title: "The Art of Precision: Luxury Decorative Engraving in Metal"
+layout: layouts/post.njk
+permalink: "/posts/20260215-074610-luxury-decorative-metal-engraving-franklin-indiana.html"
+excerpt: "Craftsmanship meets artistry in Franklin, Indiana"
+image: "/images/blog/Work2.png"
+date: 2026-02-15T07:46:10-05:00
+---
 <article>
   <header>
     <h1>The Art of Precision: Luxury Decorative Engraving in Metal</h1>

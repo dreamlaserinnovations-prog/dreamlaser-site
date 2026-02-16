@@ -1,3 +1,10 @@
+---
+title: "Elevating Metal to Art: Precision Engraving for the Discerning Collector"
+layout: layouts/post.njk
+permalink: "/posts/luxury-metal-engraving-franklin-indiana.html"
+excerpt: "Where craftsmanship meets legacy—custom engraving in Franklin, Indiana"
+image: "/images/blog/IMG_5157.JPG"
+---
 <article>
   <header>
     <h1>Elevating Metal to Art: Precision Engraving for the Discerning Collector</h1>

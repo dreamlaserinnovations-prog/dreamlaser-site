@@ -1,3 +1,11 @@
+---
+title: "Elevate Your Brand with Custom Metal Engraving Solutions from Franklin's Premier Laser Engraving Company"
+layout: layouts/post.njk
+permalink: "/posts/20260215-080503-elevate-your-brand-with-custom-metal-engraving-solutions.html"
+excerpt: "In today’s competitive marketplace, making a memorable impression is essential for any business looking to stand out. At our laser engraving company based in Franklin, Indiana, we…"
+image: "/images/blog/Work9.png"
+date: 2026-02-15T08:05:03-05:00
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>

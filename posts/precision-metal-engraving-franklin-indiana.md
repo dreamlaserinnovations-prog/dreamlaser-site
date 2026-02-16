@@ -1,3 +1,10 @@
+---
+title: "The Art of Precision: Elevating Metal with Collector-Grade Engraving"
+layout: layouts/post.njk
+permalink: "/posts/precision-metal-engraving-franklin-indiana.html"
+excerpt: "Where craftsmanship meets opulence—engraving artistry in Franklin, Indiana"
+image: "/images/blog/Work12.png"
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>

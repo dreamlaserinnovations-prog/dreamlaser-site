@@ -1,3 +1,10 @@
+---
+title: "Precision Industrial Metal Engraving for Equipment and Compliance"
+layout: layouts/post.njk
+permalink: "/posts/industrial-metal-engraving-franklin-indiana.html"
+excerpt: "• Franklin, Indiana"
+image: "/images/blog/IMG_5115.JPG"
+---
 <!doctype html>
 <html lang="en">
 <head>

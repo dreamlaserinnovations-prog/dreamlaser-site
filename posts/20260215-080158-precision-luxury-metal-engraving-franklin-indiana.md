@@ -1,3 +1,11 @@
+---
+title: "Elevate Your Metal Components with Precision Luxury Engraving in Franklin, Indiana"
+layout: layouts/post.njk
+permalink: "/posts/20260215-080158-precision-luxury-metal-engraving-franklin-indiana.html"
+excerpt: "In the world of high-end craftsmanship, the subtle art of decorative engraving transforms ordinary metal surfaces into exquisite works of art. Nestled in the charming town of Fran…"
+image: "/images/blog/IMG_5158.JPG"
+date: 2026-02-15T08:01:58-05:00
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
