@@ -1,6 +1,9 @@
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
+eleventyConfig.addPassthroughCopy({ "src/uploads": "uploads" });
+eleventyConfig.addPassthroughCopy({ "src/work1.png": "work1.png" });
+
 eleventyConfig.addPassthroughCopy({ "uploads": "uploads" });
 eleventyConfig.addPassthroughCopy({ "work1.png": "work1.png" });
 
