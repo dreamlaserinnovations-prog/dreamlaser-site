@@ -1,16 +1,23 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Dream Laser Innovations Blog</title>
-    <link>https://www.dreamlaserinnovations.com/blog.html</link>
-    <description>Laser engraving tips and industrial use cases.</description>
-
+    <title>Dream Laser Innovations LLC</title>
+    <link>https://dreamlaserinnovations.com/</link>
+    <description>Blog posts and updates from Dream Laser Innovations LLC in Franklin, Indiana.</description>
+    <language>en-us</language>
+    {% for post in collections.posts | reverse %}
     <item>
-      <title>Laser Engraving for Electrical Panel Tags in Franklin, IN</title>
-      <link>https://www.dreamlaserinnovations.com/blog-laser-engraving-electrical-tags.html</link>
-      <description>What to send for a fast quote, stainless vs aluminum, and durable industrial tags.</description>
-      <pubDate>Tue, 11 Feb 2026 12:00:00 GMT</pubDate>
+      <title>{{ post.data.title }}</title>
+      <link>https://dreamlaserinnovations.com{{ post.url }}</link>
+      <guid isPermaLink="true">https://dreamlaserinnovations.com{{ post.url }}</guid>
+      <pubDate>{{ post.date.toUTCString() }}</pubDate>
+      <description><![CDATA[{{ post.data.description or "" }}]]></description>
+      <enclosure url="https://dreamlaserinnovations.com{{ post.data.image or '/work1.png' }}" type="image/png" />
     </item>
-
+    {% endfor %}
   </channel>
 </rss>
