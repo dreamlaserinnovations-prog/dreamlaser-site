@@ -4,5 +4,8 @@
   "scripts": {
     "build": "npx @11ty/eleventy",
     "dev": "npx @11ty/eleventy --serve"
+  },
+  "dependencies": {
+    "luxon": "^3.7.2"
   }
 }
