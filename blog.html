@@ -39,109 +39,34 @@
 
   <section>
     <div class="wrap">
-      <div id="posts" class="post-grid" aria-live="polite"></div>
-      <p id="loading" class="muted">Loading posts…</p>
-      <p id="empty" class="muted" style="display:none;">No posts yet. Check back soon.</p>
+      <div class="post-grid" aria-live="polite">
+        {%- for post in collections.posts -%}
+          <a class="post-card" href="{{ post.url }}">
+            {%- if post.data.image -%}
+              <div class="img"><img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy"></div>
+            {%- else -%}
+              <div class="img"><img src="/images/instagram-blog-template.jpg" alt="{{ post.data.title }}" loading="lazy"></div>
+            {%- endif -%}
+            <div class="body">
+              <div class="meta">
+                <span class="badge">New</span>
+                <span>{{ post.date | date("MMM dd, yyyy") }}</span>
+              </div>
+              <h3>{{ post.data.title }}</h3>
+              <p>{{ post.data.excerpt or post.data.description or 'Read the full post →' }}</p>
+              <div class="footer">
+                <span class="muted">Dream Laser Innovations</span>
+                <span class="read">Read →</span>
+              </div>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+
+      {%- if collections.posts | length == 0 -%}
+        <p class="muted">No posts yet. Check back soon.</p>
+      {%- endif -%}
     </div>
   </section>
-
-  <script>
-  (function() {
-    const FEED_CANDIDATES = [
-      "/feed.xml",
-      "/feed.rss",
-      "https://www.dreamlaserinnovations.com/feed.xml"
-    ];
-
-    const DEFAULT_IMG = "/images/instagram-blog-template.jpg"; // safe default until RSS includes per-post images
-
-    const postsEl = document.getElementById("posts");
-    const loadingEl = document.getElementById("loading");
-    const emptyEl = document.getElementById("empty");
-
-    function fmtDate(pubDateText){
-      try{
-        const d = new Date(pubDateText);
-        return d.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"numeric" });
-      }catch(e){
-        return pubDateText || "";
-      }
-    }
-
-    function getText(el, tag){
-      const n = el.getElementsByTagName(tag)[0];
-      return n ? (n.textContent || "").trim() : "";
-    }
-
-    function getImage(item){
-      // Try <enclosure url="..."> or media:content, otherwise fallback
-      const enclosure = item.getElementsByTagName("enclosure")[0];
-      if(enclosure && enclosure.getAttribute("url")) return enclosure.getAttribute("url");
-      const media = item.getElementsByTagName("media:content")[0];
-      if(media && media.getAttribute("url")) return media.getAttribute("url");
-      return DEFAULT_IMG;
-    }
-
-    function card({title, link, desc, pubDate, img}){
-      const safeTitle = title || "Untitled";
-      const safeDesc = desc || "";
-      const date = fmtDate(pubDate);
-      return `
-        <a class="post-card" href="${link}">
-          <div class="img"><img src="${img}" alt=""></div>
-          <div class="body">
-            <div class="meta">
-              <span class="badge">New</span>
-              <span>${date}</span>
-            </div>
-            <h3>${safeTitle}</h3>
-            <p>${safeDesc}</p>
-            <div class="footer">
-              <span class="muted">Dream Laser Innovations</span>
-              <span class="read">Read →</span>
-            </div>
-          </div>
-        </a>
-      `;
-    }
-
-    async function fetchFirstWorkingFeed(){
-      for(const url of FEED_CANDIDATES){
-        try{
-          const res = await fetch(url, {cache:"no-store"});
-          if(!res.ok) continue;
-          const text = await res.text();
-          return text;
-        }catch(e){}
-      }
-      return null;
-    }
-
-    async function run(){
-      const xmlText = await fetchFirstWorkingFeed();
-      loadingEl.style.display = "none";
-
-      if(!xmlText){ emptyEl.style.display="block"; return; }
-
-      const doc = new DOMParser().parseFromString(xmlText, "text/xml");
-      const items = Array.from(doc.getElementsByTagName("item"));
-
-      if(!items.length){ emptyEl.style.display="block"; return; }
-
-      // newest first
-      const posts = items.map(it => ({
-        title: getText(it, "title"),
-        link: getText(it, "link"),
-        desc: getText(it, "description"),
-        pubDate: getText(it, "pubDate"),
-        img: getImage(it)
-      })).sort((a,b)=> new Date(b.pubDate) - new Date(a.pubDate));
-
-      postsEl.innerHTML = posts.map(card).join("");
-    }
-
-    run();
-  })();
-  </script>
 </body>
 </html>

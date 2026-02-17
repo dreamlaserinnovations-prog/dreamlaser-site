@@ -9,8 +9,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("css");
+  // Used by runtime fetch() on the homepage (services/materials/gallery/reviews)
+  eleventyConfig.addPassthroughCopy("data");
   eleventyConfig.addPassthroughCopy("uploads");
   eleventyConfig.addPassthroughCopy("feed.xml");
+
+  // Decap/legacy HTML files in /posts can collide with generated permalinks
+  // (Eleventy outputs raw HTML files by path *and* markdown files by permalink).
+  eleventyConfig.ignores.add("posts/*.html");
 
   // Date filter used by templates (Eleventy v3 doesn't bundle it)
   eleventyConfig.addFilter("date", (dateObj, format = "MMM dd, yyyy", zone = "utc") => {
