@@ -1,0 +1,16 @@
+# Build output
+/dist/
+
+# Dependencies
+/node_modules/
+
+# Eleventy cache
+/.cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Netlify local tooling
+/.netlify/

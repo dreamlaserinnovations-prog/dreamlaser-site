@@ -1,0 +1,150 @@
+/* Dream Laser Innovations — shared styles for Blog + Latest News
+   Keep this file at: /css/styles.css
+   Your existing homepage has its own inline styles; this file mainly upgrades blog + cards.
+*/
+
+:root{
+  --bg:#0b0f14;
+  --panel:rgba(15,22,32,.78);
+  --text:#e9eef5;
+  --muted:#a8b3c3;
+  --line:rgba(255,255,255,.12);
+  --shadow:0 12px 34px rgba(0,0,0,.42);
+  --radius:18px;
+  --accent:#4aa3ff;
+  --accent2:#7cf1b8;
+}
+
+/* Base (for blog + posts) */
+body.blog, body.post{
+  margin:0;
+  font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(74,163,255,.18), transparent 60%),
+    radial-gradient(900px 500px at 80% 10%, rgba(124,241,184,.10), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.65;
+}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--text)}
+.muted{color:var(--muted)}
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+.topbar{
+  position:sticky;top:0;z-index:40;
+  background:rgba(11,15,20,.82);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar .inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 0;gap:12px;
+}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  font-weight:900;letter-spacing:.2px;
+}
+.brand img{width:34px;height:34px;border-radius:10px;object-fit:cover}
+.nav{
+  display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  font-size:14px;color:var(--muted);
+}
+.nav a{padding:8px 10px;border-radius:12px}
+.nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+.cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 14px;border-radius:14px;font-weight:800;
+  border:1px solid rgba(74,163,255,.35);
+  background:rgba(74,163,255,.16);
+}
+.cta:hover{background:rgba(74,163,255,.22)}
+.cta.secondary{border:1px solid var(--line);background:rgba(255,255,255,.06)}
+
+/* Blog hero */
+.blog-hero{padding:40px 0 10px}
+.blog-hero h1{margin:0;font-size:clamp(28px,3.6vw,44px);letter-spacing:-.4px;line-height:1.12}
+.blog-hero p{margin:10px 0 0;color:var(--muted);max-width:75ch}
+
+/* Post card grid (Wix-like) */
+.post-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:14px;margin:18px 0 40px}
+@media (max-width:950px){.post-grid{grid-template-columns:repeat(2, 1fr)}}
+@media (max-width:560px){.post-grid{grid-template-columns:1fr}}
+
+.post-card{
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
+  box-shadow:var(--shadow);
+  display:flex;flex-direction:column;
+  min-height: 360px;
+}
+.post-card .img{
+  position:relative;
+  aspect-ratio: 16/10;
+  background:rgba(255,255,255,.03);
+  overflow:hidden;
+}
+.post-card .img img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05)}
+.post-card .img:after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.62));
+}
+.post-card .body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.post-card .meta{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:12px}
+.badge{
+  display:inline-flex;align-items:center;
+  padding:5px 9px;border-radius:999px;
+  border:1px solid rgba(124,241,184,.25);
+  background:rgba(124,241,184,.10);
+  font-weight:800;font-size:12px;color:rgba(233,238,245,.95);
+}
+.post-card h3{margin:0;font-size:18px;line-height:1.25;letter-spacing:-.2px}
+.post-card p{margin:0;color:var(--muted);font-size:14px}
+.post-card .footer{
+  margin-top:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:10px;border-top:1px solid rgba(255,255,255,.10);
+  color:var(--muted);font-size:13px;
+}
+.post-card .footer .read{color:rgba(233,238,245,.95);font-weight:900}
+.post-card:hover{transform:translateY(-2px);transition:.15s ease}
+.post-card:hover .read{color:var(--accent2)}
+
+/* Long post typography */
+.article{padding:34px 0 60px}
+.article header{padding:18px 18px 0}
+.article header h1{margin:8px 0 6px;font-size:clamp(26px,3.6vw,44px);letter-spacing:-.35px;line-height:1.12}
+.article header .meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin-bottom:10px}
+.article .content{padding:0 18px 18px}
+.article .content p{color:var(--text);opacity:.95}
+.article .content h2{margin-top:28px;margin-bottom:10px;font-size:22px;letter-spacing:-.2px}
+.article .content h3{margin-top:18px;margin-bottom:8px;font-size:18px}
+.article .content ul{margin:10px 0 10px 20px;color:var(--text);opacity:.92}
+.article .content li{margin:6px 0}
+.article .content img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  border-radius:16px;
+  border:1px solid var(--line);
+  margin:18px 0;
+}
+.article .backrow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.hr{height:1px;background:rgba(255,255,255,.10);border:0;margin:18px 0}
+
+/* Home page "Latest News" cards */
+.latest-news{padding:26px 0}
+.latest-news .head{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.latest-news h2{margin:0;font-size:22px;letter-spacing:-.2px}
+.latest-news .seeall{color:var(--muted);font-size:14px}
+.latest-news .seeall:hover{color:var(--text)}
