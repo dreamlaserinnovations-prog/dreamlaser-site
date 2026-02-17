@@ -1,6 +1,8 @@
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
+eleventyConfig.addPassthroughCopy("work1.png");
+
   // Prevent Eleventy from reading its own output folder as input.
   // If "dist" exists in the repo, it can cause "Duplicate permalink/output" build failures.
   eleventyConfig.ignores.add("dist/**");
