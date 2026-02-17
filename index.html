@@ -1,484 +1,427 @@
 <!doctype html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MQKCQ58T');</script>
+<!-- End Google Tag Manager -->
+<meta name="google-site-verification" content="UdbprWXQw126t-_d-QKHgYbHVI9RJ-9Qx7F8nPw71XA" />
+<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQKCQ58T"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+
+​<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQKCQ58T"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+
+<meta name="google-site-verification" content="UdbprWXQw126t-_d-QKHgYbHVI9RJ-9Qx7F8nPw71XA" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dream Laser Innovations LLC | Precision Laser Engraving — Franklin, Indiana</title>
-  <meta name="description" content="Professional industrial & high-end laser engraving in Franklin, Indiana. Tags, plates, signage, custom work, and production-ready marking." />
-  <link rel="stylesheet" href="/css/styles.css" />
+  <title>Dream Laser Innovations LLC | Precision Laser Engraving</title>
+  <meta name="description" content="Precision laser engraving for industrial, contract, and custom applications. Metals, wood, glass, stone, and polymers. Request a quote within 24 hours." />
+  <meta name="robots" content="index,follow" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
-    :root{
-      --bg:#0b0f14;
-      --panel:rgba(15,22,32,.78);
-      --panel2:rgba(12,18,28,.72);
-      --text:#e9eef5;
-      --muted:#a8b3c3;
-      --line:rgba(255,255,255,.12);
-      --radius:18px;
-      --shadow:0 14px 40px rgba(0,0,0,.42);
-      --accent:#4aa3ff;
-      --accent2:#28d17c;
-      --max:1180px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background: radial-gradient(1200px 700px at 20% -10%, rgba(74,163,255,.18), transparent 55%),
-                  radial-gradient(900px 600px at 85% 10%, rgba(40,209,124,.14), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.45;
-    }
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(8,12,18,.72);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:10px 0;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px; min-width: 220px;
-      font-weight:700;
-    }
-    .brand .dot{
-      width:14px;height:14px;border-radius:4px;background:linear-gradient(135deg,#53d0ff,#1ad18a);
-      box-shadow:0 0 0 4px rgba(83,208,255,.12);
-      flex:0 0 auto;
-    }
-    .brand small{display:block;color:var(--muted);font-weight:600;margin-top:-2px}
-    .links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-    .links a{color:var(--text);opacity:.92;font-weight:600;font-size:14px}
-    .links a.cta{
-      padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.05)
-    }
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+.hero-media{
+  border-radius: 18px;
+  overflow:hidden;
+  background:#0b0f14;
+  min-height: 360px;          /* makes it “taller” */
+}
+.hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;           /* fills nicely */
+  display:block;
+}
+.hero-cards{
+  margin-top: 18px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-cards{ grid-template-columns: 1fr; }
+  .hero-media{ min-height: 240px; }
+}
 
-    .card{
-      background: linear-gradient(180deg, var(--panel), var(--panel2));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-    .section{padding:22px 0}
-    .hero{
-      margin-top:18px;
-      overflow:hidden;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.15fr 1fr;
-      gap:16px;
-      padding:16px;
-    }
-    .hero-media{
-      border-radius: calc(var(--radius) - 6px);
-      overflow:hidden;
-      position:relative;
-      min-height: 420px;
-    }
-    .hero-media img{
-      width:100%;height:100%;object-fit:cover;display:block;
-      filter: contrast(1.02) saturate(1.02);
-      transform: scale(1.01);
-    }
-    .hero-content{display:flex;flex-direction:column;gap:12px}
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:12px;letter-spacing:.08em;text-transform:uppercase;
-      color:#cfe7ff;
-      padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(74,163,255,.10);
-      width:fit-content;
-    }
-    .pill .led{width:8px;height:8px;border-radius:999px;background:var(--accent2);box-shadow:0 0 0 4px rgba(40,209,124,.14)}
-    h1{margin:0;font-size:42px;line-height:1.05}
-    .sub{color:var(--muted);font-size:14px;max-width:60ch}
-    .btnrow{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:10px 14px;border-radius:12px;border:1px solid var(--line);
-      background:rgba(255,255,255,.06);color:var(--text);font-weight:700;font-size:14px
-    }
-    .btn.primary{background:rgba(74,163,255,.18);border-color:rgba(74,163,255,.38)}
-    .hint{color:#cfe7ff;font-size:12px;opacity:.92}
 
-    .mini-cards{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:2px
-    }
-    .mini{
-      padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);
-      color:var(--muted);font-size:12px
-    }
+    :root{--bg:#0b0f14;--panel:#0f1620;--text:#e9eef5;--muted:#a8b3c3;--line:rgba(255,255,255,.12);--accent:#4aa3ff;--accent2:#7cf1b8;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px;--max:1100px;--pad:20px;}
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:radial-gradient(1200px 600px at 20% 0%,rgba(74,163,255,.18),transparent 60%),radial-gradient(900px 500px at 80% 10%,rgba(124,241,184,.10),transparent 55%),var(--bg);color:var(--text);line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .topbar .inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,rgba(74,163,255,.95),rgba(124,241,184,.85));box-shadow:var(--shadow);flex:0 0 auto}
+    .nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+    .nav a{padding:8px 10px;border-radius:12px}
+    .nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .cta{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:14px;font-weight:700;border:1px solid rgba(74,163,255,.35);background:rgba(74,163,255,.16);box-shadow:0 8px 20px rgba(74,163,255,.08)}
+    .cta:hover{background:rgba(74,163,255,.22)}
+    .cta.secondary{border:1px solid var(--line);background:rgba(255,255,255,.06);font-weight:700}
+    header.hero{padding:64px 0 26px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch}
+    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}header.hero{padding-top:38px}}
+    .card{background:rgba(15,22,32,.75);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-left{padding:28px}
+    .kicker{display:inline-flex;gap:8px;align-items:center;color:var(--muted);font-weight:650;font-size:13px;letter-spacing:.35px;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 6px rgba(124,241,184,.10)}
+    h1{margin:10px 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-.4px}
+    .sub{margin:0 0 18px;color:var(--muted);font-size:16px;max-width:70ch}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .mini{margin-top:12px;color:var(--muted);font-size:14px}
+    .tag{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px;border:1px solid rgba(124,241,184,.25);background:rgba(124,241,184,.10);color:rgba(233,238,245,.95)}
+    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    @media (max-width:900px){.trust-row{grid-template-columns:1fr}}
+    .pill{padding:12px 14px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--muted);font-size:14px}
+    .hero-right{padding:22px;display:flex;flex-direction:column;gap:14px;min-height:100%}
+    .stat{padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+    .stat b{display:block;font-size:16px;margin-bottom:4px;color:var(--text)}
+    .stat span{color:var(--muted);font-size:14px}
+    section{padding:26px 0}
+    h2{margin:0 0 10px;font-size:22px;letter-spacing:-.2px}
+    .muted{color:var(--muted)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width:900px){.two-col{grid-template-columns:1fr}}
+    .box{padding:18px}
+    ul{margin:8px 0 0 18px;color:var(--muted)} li{margin:6px 0}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    @media (max-width:900px){.gallery{grid-template-columns:1fr 1fr}}
+    @media (max-width:520px){.gallery{grid-template-columns:1fr}}
+    .ph{aspect-ratio:4/3;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.03);overflow:hidden;position:relative}
+    .ph img{width:100%;height:100%;object-fit:cover;display:block}
+    .ph .label{position:absolute;left:10px;bottom:10px;font-size:12px;font-weight:700;padding:6px 9px;border-radius:999px;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12)}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    @media (max-width:900px){.reviews{grid-template-columns:1fr}}
+    .quote{padding:16px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+    .quote .stars{letter-spacing:1px;color:rgba(124,241,184,.95)} .quote p{color:var(--muted);margin-top:8px} .quote b{color:var(--text)}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+    @media (max-width:900px){.steps{grid-template-columns:1fr 1fr}} @media (max-width:520px){.steps{grid-template-columns:1fr}}
+    .step{padding:16px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+    .num{width:34px;height:34px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(74,163,255,.16);border:1px solid rgba(74,163,255,.35);font-weight:800;margin-bottom:10px}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+    @media (max-width:900px){form{grid-template-columns:1fr}}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,textarea{width:100%;padding:12px 12px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.25);color:var(--text);outline:none}
+    textarea{min-height:120px;resize:vertical;grid-column:1/-1}
+    .full{grid-column:1/-1}
+    .form-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;grid-column:1/-1;margin-top:4px}
+    .fineprint{color:var(--muted);font-size:13px}
+    footer{padding:26px 0 48px;border-top:1px solid var(--line);margin-top:22px;color:var(--muted)}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:start}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    .links a{display:inline-block;margin-right:10px;padding:6px 10px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+    .links a:hover{background:rgba(255,255,255,.07)}
+/* Footer logo */
+.footer-logo{
+  width: 70px;
+  height: auto;
+  display: block;
+  margin: 0 0 10px 0;
+  opacity: 0.95;
+}
 
-    .side-stack{display:flex;flex-direction:column;gap:10px}
-    .side-card{padding:12px 12px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
-    .side-card h3{margin:0 0 6px 0;font-size:14px}
-    .side-card p{margin:0;color:var(--muted);font-size:12px}
-    .side-card .k{color:var(--text);font-weight:700}
-    .logo-card{
-      display:flex;align-items:center;justify-content:center;
-      padding:14px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.20)
-    }
-    .logo-card img{max-width:250px;width:100%;height:auto;display:block;opacity:.96}
+/* Hero logo */
+.hero-logo-slot{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 10px 0 0;
+}
 
-    .grid2{
-      display:grid;grid-template-columns:1fr 1fr;gap:16px;
-    }
-    .pad{padding:16px}
-    h2{margin:0 0 8px 0;font-size:18px}
-    ul{margin:10px 0 0 18px;color:var(--text)}
-    li{margin:6px 0}
-    .muted{color:var(--muted);font-size:13px}
+.hero-logo{
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+}
+/* Logo card under right hero */
+.logo-card{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 22px;
+}
 
-    .work-grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px
-    }
-    .work-item{
-      position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--line);
-      background:rgba(255,255,255,.02);min-height:140px
-    }
-    .work-item img{width:100%;height:160px;object-fit:cover;display:block}
-    .work-cap{
-      position:absolute;left:10px;bottom:10px;
-      font-size:12px;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.55);
-      background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.16);
-      padding:6px 9px;border-radius:999px
-    }
+/* Logo image */
+.hero-logo{
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+}
 
-    .reviews{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px
-    }
-    .review{padding:14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
-    .stars{letter-spacing:.12em;color:#8fd3ff;font-weight:900}
-    .who{color:var(--muted);font-weight:700;margin-top:8px}
 
-    .how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:10px}
-    .step{padding:14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
-    .step b{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid var(--line);margin-right:8px}
-
-    .form-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:10px}
-    label{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
-    input,textarea{
-      width:100%;padding:11px 12px;border-radius:12px;border:1px solid var(--line);
-      background:rgba(255,255,255,.04);color:var(--text);outline:none
-    }
-    textarea{min-height:110px;resize:vertical}
-    .submit{margin-top:10px}
-    .submit button{cursor:pointer}
-
-    .news-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
-    .news-head .left h2{margin:0}
-    .post-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
-    .post-card{
-      overflow:hidden;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);
-      display:flex;flex-direction:column;min-height:260px
-    }
-    .post-card img{width:100%;height:140px;object-fit:cover;display:block}
-    .post-card .p{padding:12px}
-    .post-card h3{margin:0 0 6px 0;font-size:16px;line-height:1.25}
-    .post-card p{margin:0;color:var(--muted);font-size:13px}
-    .post-meta{margin-top:10px;color:var(--muted);font-size:12px}
-
-    footer{padding:26px 0 40px;color:var(--muted);font-size:12px}
-    footer .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    footer img{height:26px;width:auto;opacity:.9}
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr}
-      .hero-media{min-height: 320px}
-      h1{font-size:34px}
-      .grid2{grid-template-columns:1fr}
-      .mini-cards{grid-template-columns:1fr}
-      .work-grid{grid-template-columns:1fr 1fr}
-      .reviews{grid-template-columns:1fr}
-      .how-grid{grid-template-columns:1fr 1fr}
-      .form-grid{grid-template-columns:1fr}
-      .post-cards{grid-template-columns:1fr}
-    }
-    @media (max-width: 560px){
-      .work-grid{grid-template-columns:1fr}
-      .how-grid{grid-template-columns:1fr}
-    }
   </style>
 </head>
-
 <body>
-  <div class="topbar">
-    <div class="wrap">
-      <div class="nav">
-        <div class="brand">
-          <span class="dot"></span>
-          <div>
-            Dream Laser Innovations LLC
-            <small>Industrial • Contract • Custom</small>
-          </div>
-        </div>
-        <div class="links">
-          <a href="#services">Services</a>
-          <a href="#work">Work</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#process">Process</a>
-          <a class="cta" href="#quote">Request a Quote</a>
-          <a class="cta" href="/admin/">Admin</a>
-        </div>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQKCQ58T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<section class="hero">
+  <div class="wrap hero-grid">
+
+    <!-- LEFT: BIG IMAGE -->
+    <div class="hero-media">
+      <img src="work1.png" alt="Laser engraving on stone" />
+    </div>
+
+    <!-- RIGHT: BIG HEADLINE -->
+    <div class="hero-copy">
+      <div class="pill">PROFESSIONAL INDUSTRIAL & HIGH-END LASER ENGRAVING</div>
+      <h1>Precision Laser Engraving for Industrial & Custom Applications</h1>
+      <p>High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers — built for clean results, tight tolerances, and consistent quality.</p>
+
+      <div class="cta-row">
+        <a class="cta" href="#quote">Request a Quote</a>
+        <a class="cta secondary" href="tel:+18126692033">Call / Text +1 (812) 669-2033</a>
       </div>
+
+      <div class="micro">We respond within 24 hours</div>
+    </div>
+  <!-- Logo card under hero -->
+<div class="card logo-card">
+  <img 
+    src="/uploads/logo.png"
+    alt="Dream Laser Innovations LLC logo"
+    class="hero-logo"
+  >
+</div>
+
+
+</div>
+
+  <!-- BELOW HERO: THE TWO CARDS (split) -->
+  <div class="wrap hero-cards">
+    <div class="card">
+      <h3>Trusted by Manufacturers & Brands</h3>
+      <p>Precision marking that meets specs and looks professional.</p>
+      <div class="muted"><b>Materials:</b> Stainless • Aluminum • Coated metals • Wood • Glass • Stone • Polymers</div>
+    </div>
+
+    <div class="card">
+      <h3>Get started</h3>
+      <p>Send details + artwork (optional). We’ll confirm feasibility, timeline, and pricing.</p>
     </div>
   </div>
+</section>
 
-  <main class="wrap">
-    <section class="section">
-      <div class="card hero">
-        <div class="hero-grid">
-          <!-- Hero image stays on the LEFT (do not swap) -->
-          <div class="hero-media">
-            <img src="/work1.png" alt="Precision laser engraving on metal" />
-          </div>
+  <section id="services"><div class="wrap"><div class="two-col">
+    <div class="card box"><h2>Services</h2><p class="muted">Industrial, contract, and custom engraving delivered with clean results and consistent execution.</p><ul id="servicesList"></ul></div>
+    <div class="card box"><h2>Materials We Engrave</h2><p class="muted">We tailor settings by substrate to maximize contrast, crispness, and repeatability.</p><ul id="materialsList"></ul></div>
+  </div></div></section>
 
-          <!-- Hero content stays on the RIGHT -->
-          <div class="hero-content">
-            <div class="pill"><span class="led"></span> PROFESSIONAL INDUSTRIAL & HIGH-END LASER ENGRAVING</div>
-            <h1>Precision Laser Engraving<br/>for Industrial &amp; Custom Applications</h1>
-            <div class="sub">
-              High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers — built for clean results,
-              tight tolerances, and consistent quality.
-            </div>
+  <section id="work"><div class="wrap"><div class="card box">
+    
+    <div class="gallery" id="galleryGrid" aria-label="Work gallery"></div>
+  </div></div></section>
 
-            <div class="btnrow">
-              <a class="btn primary" href="#quote">Request a Quote</a>
-              <a class="btn" href="tel:+18126692033">Call / Text +1 (812) 669-2033</a>
-            </div>
-            <div class="hint">We respond within 24 hours</div>
+  <section id="reviews"><div class="wrap"><div class="card box">
+   
+    <div class="reviews" id="reviewsGrid"></div>
+  </div></div></section>
 
-            <!-- Missing 3 mini bullets under hero (restore) -->
-            <div class="mini-cards">
-              <div class="mini">Industrial grade fiber laser systems</div>
-              <div class="mini">Tight tolerances &amp; repeatable results</div>
-              <div class="mini">Short run to contract-ready capability</div>
-            </div>
+  <section id="process"><div class="wrap"><div class="card box">
+    <h2>How It Works</h2><p class="muted">Simple, clear, and fast—designed to reduce friction and get you to a quote.</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><b>Send details</b><div class="muted">Material, size, quantity, deadline, and any artwork (optional).</div></div>
+      <div class="step"><div class="num">2</div><b>Review proof + pricing</b><div class="muted">We confirm feasibility, timeline, and cost before production.</div></div>
+      <div class="step"><div class="num">3</div><b>Precision engraving</b><div class="muted">Settings tuned per substrate for crisp detail and consistency.</div></div>
+      <div class="step"><div class="num">4</div><b>Delivery / pickup</b><div class="muted">We coordinate the best option for your project and schedule.</div></div>
+    </div>
+  </div></div></section>
 
-            <!-- Restore the two right-hand “Hero box #2” cards -->
-            <div class="side-stack">
-              <div class="side-card">
-                <h3>Trusted by Manufacturers &amp; Brands</h3>
-                <p>Precision marking that meets specs and looks professional.</p>
-              </div>
-              <div class="side-card">
-                <h3>Materials</h3>
-                <p><span class="k">Stainless</span> • Aluminum • Coated metals • Wood • Glass • Stone • Polymers</p>
-              </div>
-              <div class="side-card">
-                <h3>Get started</h3>
-                <p>Send details + artwork (optional). We’ll confirm feasibility, timeline, and pricing.</p>
-              </div>
-
-              <!-- Move logo card INTO the hero right column (as requested) -->
-              <div class="logo-card">
-                <img src="/uploads/logo.png" alt="Dream Laser Innovations LLC logo" />
-              </div>
-            </div>
-          </div>
-        </div>
+  <section id="quote"><div class="wrap"><div class="card box">
+    <h2>Request a Quote</h2><p class="muted">Send project details below — we respond within 24 hours.</p>
+    <form name="quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html" enctype="multipart/form-data">
+      <input type="hidden" name="form-name" value="quote" />
+      <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
+      <div><label for="firstName">First name</label><input id="firstName" name="firstName" autocomplete="given-name" required /></div>
+      <div><label for="lastName">Last name</label><input id="lastName" name="lastName" autocomplete="family-name" required /></div>
+      <div><label for="company">Company (optional)</label><input id="company" name="company" autocomplete="organization" /></div>
+      <div><label for="phone">Phone number (optional)</label><input id="phone" name="phone" autocomplete="tel" inputmode="tel" /></div>
+      <div class="full"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+      <div class="full"><label for="details">Project details (material, size, quantity, deadline)</label><textarea id="details" name="details"></textarea></div>
+      <div class="full"><label for="file">Photo / File upload (optional — max 15MB)</label><input id="file" name="file" type="file" /></div>
+      <div class="form-actions">
+        <button class="cta" type="submit">Request a Quote</button>
+        <a class="cta secondary" id="phoneCta2" href="tel:+18126692033">Call / Text (812) 669-2033</a>
+        <span class="fineprint">Or email: <a id="emailLink" href="mailto:dreamlaserinnovations@gmail.com"><b id="emailText">dreamlaserinnovations@gmail.com</b></a></span>
       </div>
-    </section>
+    </form>
+  </div></div></section>
 
-    <section id="services" class="section">
-      <div class="grid2">
-        <div class="card pad">
-          <h2>Services</h2>
-          <div class="muted">Industrial, contract, and custom engraving delivered with clean results and consistent execution.</div>
-          <ul>
-            <li>Industrial laser engraving &amp; part marking</li>
-            <li>Precision metal engraving</li>
-            <li>Contract / manufacturing support</li>
-            <li>Custom logos, serials, and compliance markings</li>
-          </ul>
+  
+  <!-- Latest News (auto-pulls newest 3 posts from /feed.xml) -->
+  <section class="latest-news" id="latest-news">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2>Latest News</h2>
+          <div class="muted">Fresh tips, material spotlights, and real jobs from Franklin, IN.</div>
         </div>
-
-        <div class="card pad">
-          <h2>Materials We Engrave</h2>
-          <div class="muted">We tailor settings by substrate to maximize contrast, crispness, and repeatability.</div>
-          <ul>
-            <li>Stainless steel &amp; aluminum</li>
-            <li>Anodized &amp; coated metals</li>
-            <li>Hardwood &amp; engineered wood</li>
-            <li>Glass, stone, and polymers</li>
-          </ul>
-        </div>
+        <a class="seeall" href="/blog.html">See all posts →</a>
       </div>
-    </section>
 
-    <section id="work" class="section">
-      <div class="card pad">
-        <h2>Recent Work</h2>
-        <div class="muted">A few examples of precision marking, detail work, and production-ready output.</div>
-
-        <div class="work-grid">
-          <div class="work-item">
-            <img src="/work2.png" alt="Recent engraving example 1">
-            <div class="work-cap">Production-ready marking</div>
-          </div>
-          <div class="work-item">
-            <img src="/work18.png" alt="Recent engraving example 2">
-            <div class="work-cap">Industrial-grade precision</div>
-          </div>
-          <div class="work-item">
-            <img src="/work20.png" alt="Recent engraving example 3">
-            <div class="work-cap">Contract output</div>
-          </div>
-          <div class="work-item">
-            <img src="/work17.png" alt="Recent engraving example 4">
-            <div class="work-cap">Custom detail work</div>
-          </div>
-          <div class="work-item">
-            <img src="/work21.png" alt="Recent engraving example 5">
-            <div class="work-cap">Serials &amp; IDs</div>
-          </div>
-          <div class="work-item">
-            <img src="/work1.png" alt="Recent engraving example 6">
-            <div class="work-cap">Premium finish</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="reviews" class="section">
-      <div class="card pad">
-        <h2>Reviews</h2>
-        <div class="muted">A few strong notes from customers — quality, speed, and clean results.</div>
-
-        <div class="reviews">
-          <div class="review">
-            <div class="stars">★★★★★</div>
-            Fantastic quality, met all specs.
-            <div class="who">— Industrial Buyer</div>
-          </div>
-          <div class="review">
-            <div class="stars">★★★★★</div>
-            Dream Laser exceeded expectations and delivered clean, professional results.
-            <div class="who">— Chris N.</div>
-          </div>
-          <div class="review">
-            <div class="stars">★★★★★</div>
-            Fast turnaround and the custom piece turned out perfectly.
-            <div class="who">— Jamie L.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process" class="section">
-      <div class="card pad">
-        <h2>How It Works</h2>
-        <div class="muted">Simple, clear, and fast—designed to reduce friction and get you to a quote.</div>
-
-        <div class="how-grid">
-          <div class="step"><b>1</b> <strong>Send details</strong><div class="muted">Material, size, quantity, deadline, and any artwork (optional).</div></div>
-          <div class="step"><b>2</b> <strong>Review proof + pricing</strong><div class="muted">We confirm feasibility, timeline, and cost before production.</div></div>
-          <div class="step"><b>3</b> <strong>Precision engraving</strong><div class="muted">Settings tuned per substrate for crisp detail and consistency.</div></div>
-          <div class="step"><b>4</b> <strong>Delivery / pickup</strong><div class="muted">We coordinate the best option for your project and schedule.</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="quote" class="section">
-      <div class="card pad">
-        <h2>Request a Quote</h2>
-        <div class="muted">Send project details below — we respond within 24 hours.</div>
-
-        <div class="form-grid">
-          <form name="quote" method="POST" data-netlify="true" action="/thank-you/">
-            <input type="hidden" name="form-name" value="quote" />
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-              <div>
-                <label>First name</label>
-                <input name="first_name" required />
-              </div>
-              <div>
-                <label>Last name</label>
-                <input name="last_name" required />
-              </div>
-              <div>
-                <label>Company (optional)</label>
-                <input name="company" />
-              </div>
-              <div>
-                <label>Phone number (optional)</label>
-                <input name="phone" />
-              </div>
+      <div class="post-grid" style="margin-top:14px;">
+        {%- for post in collections.posts | slice(0, 3) -%}
+          <a class="post-card" href="{{ post.url }}">
+            {%- if post.data.image -%}
+              <div class="img"><img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy"></div>
+            {%- else -%}
+              <div class="img"><img src="/images/instagram-blog-template.jpg" alt="{{ post.data.title }}" loading="lazy"></div>
+            {%- endif -%}
+            <div class="body">
+              <div class="meta"><span class="badge">New</span><span>{{ post.date | date("MMM dd, yyyy") }}</span></div>
+              <h3>{{ post.data.title }}</h3>
+              <p>{{ post.data.description or 'Read the full post →' }}</p>
+              <div class="footer"><span class="muted">Dream Laser Innovations</span><span class="read">Read →</span></div>
             </div>
-            <div style="margin-top:12px">
-              <label>Email address</label>
-              <input type="email" name="email" required />
-            </div>
-            <div style="margin-top:12px">
-              <label>Project details (material, size, quantity, deadline)</label>
-              <textarea name="details" required></textarea>
-            </div>
-            <div class="submit">
-              <button class="btn primary" type="submit">Send Request</button>
-            </div>
-          </form>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+<footer><div class="wrap"><div class="footer-grid">
+    <div>
+<br/><img src="/uploads/logo.png" alt="Dream Laser Innovations LLC logo" class="footer-logo" loading="lazy">
+      <b style="color:var(--text);" id="footerCompany">Dream Laser Innovations LLC</b>
 
-          <div class="card" style="padding:14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line);">
-            <h2 style="margin:0 0 6px 0;font-size:16px">Email Request</h2>
-            <div class="muted">Prefer email? Send specs, artwork, and deadline.</div>
-            <div style="margin-top:10px;font-weight:800">
-              <a href="mailto:dreamlaserinnovations@gmail.com">dreamlaserinnovations@gmail.com</a>
-            </div>
-            <div class="muted" style="margin-top:10px">Franklin, Indiana</div>
+      <span id="footerPhone">(812) 669-2033</span><br/>
+      <a id="footerEmail" href="mailto:dreamlaserinnovations@gmail.com">dreamlaserinnovations@gmail.com</a><br/>
+      <span id="footerAddr1">324 W Madison St</span><br/>
+      <span id="footerAddr2">Franklin, IN 46131</span>
+      <div style="margin-top:12px;color:var(--muted);font-size:13px;">© <span id="yearNow"></span> <span id="footerCompany2">Dream Laser Innovations LLC</span>.</div>
+    </div>
+
+    <div class="links">
+      <a href="#" onclick="alert('Add your Privacy Policy page link later'); return false;">Privacy Policy</a>
+      <a href="#" onclick="alert('Add your Accessibility Statement page link later'); return false;">Accessibility Statement</a>
+      <a href="#" onclick="alert('Add your Terms & Conditions page link later'); return false;">Terms & Conditions</a>
+      <a href="#" onclick="alert('Add your Refund Policy page link later'); return false;">Refund Policy</a>
+      <div style="margin-top:12px;" class="muted">Built for speed • No monthly hosting fees</div>
+    </div>
+  </div>
+</div>
+</footer>
+
+  <script>
+    document.getElementById('yearNow').textContent = new Date().getFullYear();
+    function escHtml(s){return String(s).replace(/[&<>"']/g,m=>({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[m]));}
+    function escAttr(s){return String(s).replace(/"/g,'&quot;');}
+    async function loadSite(){
+      try{
+        const res = await fetch('/data/site.json',{cache:'no-store'});
+        const d = await res.json();
+        const setText=(id,val)=>{const el=document.getElementById(id); if(el && val!=null) el.textContent=val;}
+        setText('companyName',d.companyName); setText('footerCompany',d.companyName); setText('footerCompany2',d.companyName);
+        setText('tagline',d.tagline); setText('heroKicker',d.heroKicker); setText('heroTitle',d.heroTitle); setText('heroSub',d.heroSub);
+        if(d.phone && d.phoneTel){
+          const p1=document.getElementById('phoneCta'); const p2=document.getElementById('phoneCta2');
+          if(p1){p1.textContent=`Call / Text ${d.phone}`; p1.href=`tel:${d.phoneTel}`;}
+          if(p2){p2.textContent=`Call / Text ${d.phone}`; p2.href=`tel:${d.phoneTel}`;}
+          setText('footerPhone',d.phone);
+        }
+        if(d.email){
+          const e1=document.getElementById('emailLink'); const e2=document.getElementById('footerEmail'); const eT=document.getElementById('emailText');
+          if(e1) e1.href=`mailto:${d.email}`; if(e2){e2.href=`mailto:${d.email}`; e2.textContent=d.email;} if(eT) eT.textContent=d.email;
+        }
+        if(Array.isArray(d.addressLines)){ setText('footerAddr1',d.addressLines[0]||''); setText('footerAddr2',d.addressLines[1]||''); }
+        const trust=document.getElementById('trustRow'); if(trust && Array.isArray(d.trustPills)){ trust.innerHTML=d.trustPills.slice(0,3).map(x=>`<div class="pill">${escHtml(x)}</div>`).join(''); }
+        const sList=document.getElementById('servicesList'); if(sList && Array.isArray(d.services)){ sList.innerHTML=d.services.map(x=>`<li>${escHtml(x)}</li>`).join(''); }
+        const mList=document.getElementById('materialsList'); if(mList && Array.isArray(d.materials)){ mList.innerHTML=d.materials.map(x=>`<li>${escHtml(x)}</li>`).join(''); }
+        const gal=document.getElementById('galleryGrid'); if(gal && Array.isArray(d.gallery)){
+          gal.innerHTML=d.gallery.slice(0,12).map(it=>{const img=it.image?`<img src="${escAttr(it.image)}" alt="${escAttr(it.label||'Work sample')}">`:''; return `<div class="ph">${img}<div class="label">${escHtml(it.label||'')}</div></div>`;}).join('');
+        }
+        const rev=document.getElementById('reviewsGrid'); if(rev && Array.isArray(d.reviews)){
+          rev.innerHTML=d.reviews.slice(0,3).map(r=>`<div class="quote"><div class="stars">★★★★★</div><p>${escHtml(r.text||'')}</p><b>— ${escHtml(r.name||'')}</b></div>`).join('');
+        }
+      }catch(e){console.warn('Site data load failed',e);}
+    }
+    loadSite();
+  </script>
+
+  <script>
+  (function(){
+    const FEED_CANDIDATES = ["/feed.xml","/feed.rss","https://www.dreamlaserinnovations.com/feed.xml"];
+    const DEFAULT_IMG = "/images/instagram-blog-template.jpg";
+    const el = document.getElementById("homePosts");
+    const loading = document.getElementById("homePostsLoading");
+    if(!el || !loading) return;
+
+    function getText(item, tag){
+      const n = item.getElementsByTagName(tag)[0];
+      return n ? (n.textContent || "").trim() : "";
+    }
+    function getImage(item){
+      const enclosure = item.getElementsByTagName("enclosure")[0];
+      if(enclosure && enclosure.getAttribute("url")) return enclosure.getAttribute("url");
+      const media = item.getElementsByTagName("media:content")[0];
+      if(media && media.getAttribute("url")) return media.getAttribute("url");
+      return DEFAULT_IMG;
+    }
+    function fmtDate(pubDateText){
+      try{
+        const d = new Date(pubDateText);
+        return d.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"numeric" });
+      }catch(e){ return ""; }
+    }
+    function card(p){
+      return `
+        <a class="post-card" href="${p.link}">
+          <div class="img"><img src="${p.img}" alt=""></div>
+          <div class="body">
+            <div class="meta"><span class="badge">New</span><span>${fmtDate(p.pubDate)}</span></div>
+            <h3>${p.title}</h3>
+            <p>${p.desc}</p>
+            <div class="footer"><span class="muted">Dream Laser Innovations</span><span class="read">Read →</span></div>
           </div>
-        </div>
-      </div>
-    </section>
+        </a>
+      `;
+    }
 
-    <section class="section">
-      <div class="card pad">
-        <div class="news-head">
-          <div class="left">
-            <h2>Latest News</h2>
-            <div class="muted">Fresh tips, material spotlights, and real jobs from Franklin.</div>
-          </div>
-          <div class="right"><a href="/posts/">See all posts →</a></div>
-        </div>
+    async function fetchFeed(){
+      for(const url of FEED_CANDIDATES){
+        try{
+          const res = await fetch(url, {cache:"no-store"});
+          if(!res.ok) continue;
+          return await res.text();
+        }catch(e){}
+      }
+      return null;
+    }
 
-        {# Pull the newest 3 from collections.posts #}
-        {% set latest = collections.posts | reverse | slice(0, 3) %}
-        <div class="post-cards">
-          {% for post in latest %}
-            <a class="post-card" href="{{ post.url }}">
-              {% if post.data.image %}
-                <img src="{{ post.data.image }}" alt="{{ post.data.title | safe }}">
-              {% else %}
-                <img src="/work18.png" alt="Laser engraving blog post">
-              {% endif %}
-              <div class="p">
-                <h3>{{ post.data.title }}</h3>
-                {% if post.data.description %}
-                  <p>{{ post.data.description }}</p>
-                {% else %}
-                  <p>Read the full post →</p>
-                {% endif %}
-                <div class="post-meta">{{ post.date | date("MMM dd, yyyy") }}</div>
-              </div>
-            </a>
-          {% endfor %}
-        </div>
+    (async function(){
+      const xmlText = await fetchFeed();
+      loading.style.display = "none";
+      if(!xmlText) return;
 
-      </div>
-    </section>
+      const doc = new DOMParser().parseFromString(xmlText, "text/xml");
+      const items = Array.from(doc.getElementsByTagName("item"));
+      const posts = items.map(it => ({
+        title: getText(it,"title") || "Untitled",
+        link: getText(it,"link"),
+        desc: getText(it,"description"),
+        pubDate: getText(it,"pubDate"),
+        img: getImage(it)
+      })).sort((a,b)=> new Date(b.pubDate) - new Date(a.pubDate))
+        .slice(0,3);
 
-    <footer>
-      <div class="foot">
-        <div>© 2026 Dream Laser Innovations LLC • Franklin, Indiana</div>
-        <img src="/uploads/logo.png" alt="Dream Laser Innovations LLC">
-      </div>
-    </footer>
-  </main>
+      el.innerHTML = posts.map(card).join("");
+    })();
+  })();
+  </script>
+
 </body>
 </html>

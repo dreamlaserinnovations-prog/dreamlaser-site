@@ -1,11 +1,11 @@
 {
   "name": "dreamlaserinnovations-site",
   "version": "1.0.0",
+  "dependencies": {
+    "luxon": "^3.5.0"
+  },
   "scripts": {
     "build": "npx @11ty/eleventy",
     "dev": "npx @11ty/eleventy --serve"
-  },
-  "dependencies": {
-    "luxon": "^3.7.2"
   }
 }

@@ -1,31 +1,25 @@
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
-eleventyConfig.addPassthroughCopy("uploads");
-eleventyConfig.addPassthroughCopy("work1.png");
-
-
-
-  // Date filter
-  eleventyConfig.addFilter("date", (dateObj, format = "MMM dd, yyyy", zone = "utc") => {
-    if (!dateObj) return "";
-
-    const dt =
-      dateObj instanceof Date
-        ? DateTime.fromJSDate(dateObj, { zone })
-        : DateTime.fromISO(String(dateObj), { zone });
-
-    return dt.isValid ? dt.toFormat(format) : "";
-  });
-
   // Static assets
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("uploads");
+  eleventyConfig.addPassthroughCopy("feed.xml");
 
-  // Blog collection
+  // Date filter used by templates (Eleventy v3 doesn't bundle it)
+  eleventyConfig.addFilter("date", (dateObj, format = "MMM dd, yyyy", zone = "utc") => {
+    if (!dateObj) return "";
+    const jsDate = dateObj instanceof Date ? dateObj : new Date(dateObj);
+    return DateTime.fromJSDate(jsDate, { zone }).toFormat(format);
+  });
+
+  // Blog collection (newest first)
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("posts/*.md");
+    return collectionApi
+      .getFilteredByGlob("posts/*.md")
+      .sort((a, b) => (b.date || 0) - (a.date || 0));
   });
 
   return {
