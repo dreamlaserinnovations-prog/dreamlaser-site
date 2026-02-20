@@ -2,21 +2,31 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "uploads"
+public_folder: "/uploads"
 
 collections:
+
+  # BLOG POSTS
   - name: "posts"
     label: "Blog Posts"
     folder: "posts"
     create: true
-    extension: "md"
-    format: "frontmatter"
-    slug: "{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ" }
-      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
-      - { label: "Permalink", name: "permalink", widget: "string", default: "/posts/{{slug}}.html" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  # HOMEPAGE CONTENT
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - file: "data/homepage.json"
+        label: "Homepage Content"
+        name: "homepage"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Industries Section Text", name: "industriesText", widget: "text" }
