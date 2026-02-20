@@ -6,7 +6,6 @@ media_folder: "uploads"
 public_folder: "/uploads"
 
 collections:
-
   # BLOG POSTS
   - name: "posts"
     label: "Blog Posts"
@@ -19,7 +18,7 @@ collections:
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # HOMEPAGE CONTENT
+  # HOMEPAGE CONTENT (data/homepage.json)
   - name: "homepage"
     label: "Homepage"
     files:
@@ -27,6 +26,55 @@ collections:
         label: "Homepage Content"
         name: "homepage"
         fields:
+          - { label: "Hero Kicker (small line)", name: "heroKicker", widget: "string", required: false }
           - { label: "Hero Title", name: "heroTitle", widget: "string" }
-          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
-          - { label: "Industries Section Text", name: "industriesText", widget: "text" }
+          - { label: "Hero Sub (paragraph)", name: "heroSub", widget: "text" }
+
+          - { label: "Tagline", name: "tagline", widget: "string", required: false }
+
+          - label: "Trust Pills"
+            name: "trustPills"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            field: { label: "Service", name: "service", widget: "string" }
+
+          - label: "Materials We Engrave"
+            name: "materials"
+            widget: "list"
+            field: { label: "Material", name: "material", widget: "string" }
+
+          - label: "Gallery"
+            name: "gallery"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Label", name: "label", widget: "string" }
+
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+
+  # SITE SETTINGS (data/site.json) — optional but recommended
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - file: "data/site.json"
+        label: "Company Info"
+        name: "site"
+        fields:
+          - { label: "Company Name", name: "companyName", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone (display)", name: "phone", widget: "string" }
+          - { label: "Phone (tel only digits)", name: "phoneTel", widget: "string" }
+
+          - label: "Address Lines"
+            name: "addressLines"
+            widget: "list"
+            field: { label: "Line", name: "line", widget: "string" }
