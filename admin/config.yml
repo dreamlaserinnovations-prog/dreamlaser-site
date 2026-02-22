@@ -2,51 +2,73 @@ backend:
   name: git-gateway
   branch: main
 
+publish_mode: editorial_workflow
+
 media_folder: "uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "settings"
-    label: "Site Settings"
+  - name: "homepage"
+    label: "Homepage"
     files:
       - file: "data/site.json"
-        label: "Site Content"
+        label: "Homepage Content"
         name: "site"
         fields:
           - { label: "Company Name", name: "companyName", widget: "string" }
-          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string", required: false }
           - { label: "Hero Kicker", name: "heroKicker", widget: "string" }
           - { label: "Hero Title", name: "heroTitle", widget: "string" }
-          - { label: "Hero Subtext", name: "heroSub", widget: "text" }
+          - { label: "Hero Sub", name: "heroSub", widget: "text" }
+
           - { label: "Phone (Display)", name: "phone", widget: "string" }
-          - { label: "Phone (tel link, digits only)", name: "phoneTel", widget: "string" }
+          - { label: "Phone (Digits only)", name: "phoneTel", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
+
           - label: "Address Lines"
             name: "addressLines"
             widget: "list"
-            min: 2
-            max: 2
-          - label: "Trust Pills (top 3)"
+            field: { label: "Line", name: "line", widget: "string" }
+
+          - label: "Trust Pills"
             name: "trustPills"
             widget: "list"
-            min: 1
+            field: { label: "Pill", name: "pill", widget: "string" }
+
           - label: "Services"
             name: "services"
             widget: "list"
-            min: 1
+            field: { label: "Service", name: "service", widget: "string" }
+
           - label: "Materials"
             name: "materials"
             widget: "list"
-            min: 1
+            field: { label: "Material", name: "material", widget: "string" }
+
+          - label: "Gallery"
+            name: "gallery"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Label", name: "label", widget: "string", required: false }
+
           - label: "Reviews"
             name: "reviews"
             widget: "list"
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Text", name: "text", widget: "text" }
-          - label: "Gallery (upload images first in Media)"
-            name: "gallery"
-            widget: "list"
-            fields:
-              - { label: "Image", name: "image", widget: "image", required: false }
-              - { label: "Label", name: "label", widget: "string", required: false }
+
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

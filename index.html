@@ -76,7 +76,38 @@
     @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
     .links a{display:inline-block;margin-right:10px;padding:6px 10px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
     .links a:hover{background:rgba(255,255,255,.07)}
-  </style>
+  
+/* --- HERO v2 (image left, copy right) --- */
+.hero-grid-2{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 22px;
+  align-items: stretch;
+}
+.hero-media{
+  padding: 0;
+  overflow:hidden;
+  min-height: 420px;
+}
+.hero-media img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+.hero-copy{ padding: 28px; }
+.hero-cards{
+  margin-top: 18px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 900px){
+  .hero-grid-2{ grid-template-columns: 1fr; }
+  .hero-media{ min-height: 260px; }
+  .hero-cards{ grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
   <div class="topbar">
@@ -94,29 +125,58 @@
         <a href="#reviews">Reviews</a>
         <a href="#process">Process</a>
         <a href="#quote">Request a Quote</a>
+          <a href="/posts/">Blog</a>
         <a class="cta secondary" href="/admin/">Admin</a>
       </nav>
     </div></div>
   </div>
 
-  <header class="hero"><div class="wrap"><div class="hero-grid">
-    <div class="card hero-left">
-      <div class="kicker"><span class="dot"></span> <span id="heroKicker">Professional Industrial & High-End Laser Engraving</span></div>
-      <h1 id="heroTitle">Precision Laser Engraving for Industrial & Custom Applications</h1>
-      <p class="sub" id="heroSub">High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers — built for clean results, tight tolerances, and consistent quality.</p>
-      <div class="hero-actions">
-        <a class="cta" href="#quote">Request a Quote</a>
-        <a class="cta secondary" id="phoneCta" href="tel:+18126692033">Call / Text (812) 669-2033</a>
+  <header class="hero">
+  <div class="wrap">
+    <div class="hero-grid hero-grid-2">
+      <!-- LEFT: HERO IMAGE -->
+      <div class="card hero-media" aria-label="Featured work image">
+        <img src="/uploads/work19.png" alt="Laser engraving on stone" loading="lazy">
       </div>
-      <div class="mini"><span class="tag">We respond within 24 hours</span></div>
-      <div class="trust-row" id="trustRow"></div>
+
+      <!-- RIGHT: HERO COPY -->
+      <div class="card hero-copy">
+        <div class="kicker"><span class="dot"></span> <span id="heroKicker">Professional Industrial & High-End Laser Engraving</span></div>
+        <h1 id="heroTitle">Precision Laser Engraving for Industrial & Custom Applications</h1>
+        <p class="sub" id="heroSub">High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers — built for clean results, tight tolerances, and consistent quality.</p>
+
+        <div class="hero-actions">
+          <a class="cta" href="#quote">Request a Quote</a>
+          <a class="cta secondary" href="tel:+18126692033" id="phoneCta">Call / Text (812) 669-2033</a>
+        </div>
+
+        <div class="mini">
+          <span class="tag" id="tagline">Industrial • Contract • High-End Custom</span>
+        </div>
+
+        <div class="trust-row" id="trustRow">
+          <div class="pill">Industrial-grade fiber laser systems</div>
+          <div class="pill">Tight tolerances & repeatable results</div>
+          <div class="pill">Short-run to contract-ready capability</div>
+        </div>
+      </div>
     </div>
-    <div class="card hero-right">
-      <div class="stat"><b>Trusted by Manufacturers & Brands</b><span class="muted">Precision marking that meets specs and looks professional.</span></div>
-      <div class="stat"><b>Materials</b><span>Stainless • Aluminum • Coated metals • Wood • Glass • Stone • Polymers</span></div>
-      <div class="stat"><b>Get started</b><span>Send details + artwork (optional). We’ll confirm feasibility, timeline, and pricing.</span></div>
+
+    <!-- BELOW HERO: TWO SUPPORT CARDS -->
+    <div class="hero-cards">
+      <div class="card stat">
+        <b>Trusted by Manufacturers & Brands</b>
+        <span class="muted">Precision marking that meets specs and looks professional.</span>
+        <div class="muted" style="margin-top:10px;"><b>Materials:</b> Stainless • Aluminum • Coated metals • Wood • Glass • Stone • Polymers</div>
+      </div>
+
+      <div class="card stat">
+        <b>Get started</b>
+        <span>Send details + artwork (optional). We’ll confirm feasibility, timeline, and pricing.</span>
+      </div>
     </div>
-  </div></div></header>
+  </div>
+</header>
 
   <section id="services"><div class="wrap"><div class="two-col">
     <div class="card box"><h2>Services</h2><p class="muted">Industrial, contract, and custom engraving delivered with clean results and consistent execution.</p><ul id="servicesList"></ul></div>
@@ -128,7 +188,20 @@
     <div class="gallery" id="galleryGrid" aria-label="Work gallery"></div>
   </div></div></section>
 
-  <section id="reviews"><div class="wrap"><div class="card box">
+  
+  <section id="latest">
+    <div class="wrap">
+      <div class="card box">
+        <h2>Latest Posts</h2>
+        <p class="muted">Industrial engraving insights, materials, and real-world use cases.</p>
+        <div id="latestPosts"></div>
+        <div style="margin-top:12px;">
+          <a class="cta secondary" href="/posts/">View all posts</a>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="reviews"><div class="wrap"><div class="card box">
     <h2>Reviews</h2><p class="muted">Keep 3–4 strong reviews. Real, specific, and short wins.</p>
     <div class="reviews" id="reviewsGrid"></div>
   </div></div></section>
@@ -216,5 +289,38 @@
     }
     loadSite();
   </script>
+
+<script>
+(async function(){
+  const el = document.getElementById('latestPosts');
+  if(!el) return;
+  try{
+    const res = await fetch('/feed.xml', {cache:'no-store'});
+    if(!res.ok) throw new Error('feed.xml not found');
+    const xmlText = await res.text();
+    const doc = new DOMParser().parseFromString(xmlText, 'text/xml');
+    const items = Array.from(doc.querySelectorAll('item')).slice(0,3);
+    el.innerHTML = items.map(it => {
+      const title = (it.querySelector('title')?.textContent || '').trim();
+      const link  = (it.querySelector('link')?.textContent || '').trim();
+      const desc  = (it.querySelector('description')?.textContent || '').trim();
+      const pub   = (it.querySelector('pubDate')?.textContent || '').trim();
+      const date  = pub ? new Date(pub).toLocaleDateString() : '';
+      return `
+        <div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,.10);">
+          <div style="font-weight:800;"><a href="${link}">${escapeHtml(title)}</a></div>
+          ${date ? `<div class="muted" style="font-size:13px;margin-top:4px;">${date}</div>` : ''}
+          ${desc ? `<div class="muted" style="margin-top:6px;">${escapeHtml(stripHtml(desc))}</div>` : ''}
+        </div>`;
+    }).join('');
+  }catch(e){
+    el.innerHTML = '<div class="muted">Posts will appear here once published.</div>';
+  }
+
+  function stripHtml(s){ return String(s).replace(/<[^>]*>/g,'').replace(/\s+/g,' ').trim(); }
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+})();
+</script>
+
 </body>
 </html>

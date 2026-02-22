@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog | Dream Laser Innovations</title>
+  <meta name="description" content="Industrial engraving insights, materials, and real-world use cases." />
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#0b0f14;color:#e9eef5;line-height:1.55}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 20px}
+    a{color:#4aa3ff;text-decoration:none}
+    .card{background:rgba(15,22,32,.75);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px;margin:12px 0}
+    .muted{color:#a8b3c3}
+    h1{margin:0 0 10px}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#a8b3c3;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <p style="margin:0"><a href="/">← Back to Home</a></p>
+      <span class="pill">Updates & Guides</span>
+    </div>
+    <h1>Blog</h1>
+    <p class="muted">Latest posts from Dream Laser Innovations.</p>
+
+    <div id="posts"></div>
+  </div>
+
+  <script>
+  (async function(){
+    const el = document.getElementById('posts');
+    try{
+      const res = await fetch('/feed.xml', {cache:'no-store'});
+      if(!res.ok) throw new Error('feed.xml not found');
+      const xmlText = await res.text();
+      const doc = new DOMParser().parseFromString(xmlText, 'text/xml');
+      const items = Array.from(doc.querySelectorAll('item'));
+      el.innerHTML = items.map(it => {
+        const title = (it.querySelector('title')?.textContent || '').trim();
+        const link  = (it.querySelector('link')?.textContent || '').trim();
+        const desc  = (it.querySelector('description')?.textContent || '').trim();
+        const pub   = (it.querySelector('pubDate')?.textContent || '').trim();
+        const date  = pub ? new Date(pub).toLocaleDateString() : '';
+        return `
+          <div class="card">
+            <h2 style="margin:0 0 6px;font-size:20px;"><a href="${link}">${escapeHtml(title)}</a></h2>
+            ${date ? `<div class="muted" style="font-size:13px;margin-bottom:10px;">${date}</div>` : ''}
+            ${desc ? `<div class="muted">${escapeHtml(stripHtml(desc))}</div>` : ''}
+          </div>`;
+      }).join('');
+    }catch(e){
+      el.innerHTML = '<div class="card"><div class="muted">Posts are not available yet.</div></div>';
+    }
+
+    function stripHtml(s){ return String(s).replace(/<[^>]*>/g,'').replace(/\s+/g,' ').trim(); }
+    function escapeHtml(s){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+  })();
+  </script>
+</body>
+</html>
