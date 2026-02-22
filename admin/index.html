@@ -3,19 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Content Manager</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <title>Dream Laser Admin</title>
+    <meta name="robots" content="noindex" />
   </head>
   <body>
-    <script src="https://unpkg.com/decap-cms-app@^3/dist/decap-cms-app.js"></script>
+    <noscript>This admin requires JavaScript.</noscript>
+
+    <!-- Netlify Identity widget (required for git-gateway login) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Decap CMS -->
+    <script src="https://unpkg.com/decap-cms-app@3.10.0/dist/decap-cms-app.js"></script>
+
     <script>
+      // After login, Decap will load automatically. If you ever get stuck, this forces the redirect.
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", function(user) {
-          if (!user) {
-            window.netlifyIdentity.on("login", function() {
-              document.location.href = "/admin/";
-            });
-          }
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
         });
       }
     </script>
