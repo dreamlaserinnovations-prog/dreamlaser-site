@@ -1,58 +1,71 @@
-backend:
-  name: git-gateway
-  branch: main
-
-media_folder: "uploads"
-public_folder: "/uploads"
-
-collections:
-  - name: "site"
-    label: "Site Content"
-    files:
-      - file: "data/site.json"
-        label: "Homepage Content"
-        name: "homepage"
-        fields:
-          - { label: "Company Name", name: "companyName", widget: "string" }
-          - { label: "Tagline", name: "tagline", widget: "string" }
-          - { label: "Hero Kicker", name: "heroKicker", widget: "string" }
-          - { label: "Hero Title", name: "heroTitle", widget: "string" }
-          - { label: "Hero Sub", name: "heroSub", widget: "text" }
-
-          - label: "Trust Pills"
-            name: "trustPills"
-            widget: "list"
-            field: { label: "Pill", name: "pill", widget: "string" }
-
-          - { label: "Phone (Display)", name: "phone", widget: "string" }
-          - { label: "Phone (Digits only)", name: "phoneTel", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-
-          - label: "Address Lines"
-            name: "addressLines"
-            widget: "list"
-            field: { label: "Line", name: "line", widget: "string" }
-
-          - label: "Services"
-            name: "services"
-            widget: "list"
-            field: { label: "Service", name: "service", widget: "string" }
-
-          - label: "Materials"
-            name: "materials"
-            widget: "list"
-            field: { label: "Material", name: "material", widget: "string" }
-
-          - label: "Gallery"
-            name: "gallery"
-            widget: "list"
-            fields:
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Label", name: "label", widget: "string" }
-
-          - label: "Reviews"
-            name: "reviews"
-            widget: "list"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Text", name: "text", widget: "text" }
+{
+  "companyName": "Dream Laser Innovations LLC",
+  "tagline": "Industrial \u2022 Contract \u2022 High-End Custom",
+  "heroKicker": "Professional Industrial & High-End Laser Engraving",
+  "heroTitle": "Precision Laser Engraving for Industrial & Custom Applications",
+  "heroSub": "High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers \u2014 built for clean results, tight tolerances, and consistent quality.",
+  "phone": "+1 (812) 669-2033",
+  "phoneTel": "+18126692033",
+  "email": "dreamlaserinnovations@gmail.com",
+  "addressLines": [
+    "324 W Madison St",
+    "Franklin, IN 46131"
+  ],
+  "services": [
+    "Industrial laser engraving & part marking",
+    "Precision metal engraving",
+    "Contract / manufacturing support",
+    "Custom logos, serials, and compliance markings"
+  ],
+  "materials": [
+    "Stainless steel & aluminum",
+    "Anodized & coated metals",
+    "Hardwood & engineered wood",
+    "Glass, stone, and polymers"
+  ],
+  "trustPills": [
+    "Industrial-grade fiber laser systems",
+    "Tight tolerances & repeatable results",
+    "Short-run to contract-ready capability"
+  ],
+  "reviews": [
+    {
+      "name": "Industrial Buyer",
+      "text": "Fantastic quality, met all specs."
+    },
+    {
+      "name": "Chris N.",
+      "text": "Dream Laser exceeded expectations and delivered clean, professional results."
+    },
+    {
+      "name": "Jamie L.",
+      "text": "Fast turnaround and the custom piece turned out perfectly."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "",
+      "label": "Add image 1"
+    },
+    {
+      "image": "",
+      "label": "Add image 2"
+    },
+    {
+      "image": "",
+      "label": "Add image 3"
+    },
+    {
+      "image": "",
+      "label": "Add image 4"
+    },
+    {
+      "image": "",
+      "label": "Add image 5"
+    },
+    {
+      "image": "",
+      "label": "Add image 6"
+    }
+  ]
+}
