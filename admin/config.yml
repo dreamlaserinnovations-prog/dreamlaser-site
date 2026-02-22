@@ -18,20 +18,31 @@ collections:
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # HOMEPAGE CONTENT (data/homepage.json)
-  - name: "homepage"
-    label: "Homepage"
+  # SITE + HOMEPAGE CONTENT (data/site.json)
+  - name: "site"
+    label: "Site Content"
     files:
-      - file: "data/homepage.json"
-        label: "Homepage Content"
-        name: "homepage"
+      - file: "data/site.json"
+        label: "Website Content"
+        name: "site"
         fields:
-          - { label: "Hero Kicker (small line)", name: "heroKicker", widget: "string", required: false }
+          # Company info
+          - { label: "Company Name", name: "companyName", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone (display)", name: "phone", widget: "string" }
+          - { label: "Phone (tel only digits)", name: "phoneTel", widget: "string" }
+          - label: "Address Lines"
+            name: "addressLines"
+            widget: "list"
+            field: { label: "Line", name: "line", widget: "string" }
+
+          # Hero
+          - { label: "Hero Kicker", name: "heroKicker", widget: "string" }
           - { label: "Hero Title", name: "heroTitle", widget: "string" }
           - { label: "Hero Sub (paragraph)", name: "heroSub", widget: "text" }
-
           - { label: "Tagline", name: "tagline", widget: "string", required: false }
 
+          # Pills + lists
           - label: "Trust Pills"
             name: "trustPills"
             widget: "list"
@@ -42,11 +53,12 @@ collections:
             widget: "list"
             field: { label: "Service", name: "service", widget: "string" }
 
-          - label: "Materials We Engrave"
+          - label: "Materials"
             name: "materials"
             widget: "list"
             field: { label: "Material", name: "material", widget: "string" }
 
+          # Gallery
           - label: "Gallery"
             name: "gallery"
             widget: "list"
@@ -54,27 +66,10 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Label", name: "label", widget: "string" }
 
+          # Reviews
           - label: "Reviews"
             name: "reviews"
             widget: "list"
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Text", name: "text", widget: "text" }
-
-  # SITE SETTINGS (data/site.json) — optional but recommended
-  - name: "site"
-    label: "Site Settings"
-    files:
-      - file: "data/site.json"
-        label: "Company Info"
-        name: "site"
-        fields:
-          - { label: "Company Name", name: "companyName", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Phone (display)", name: "phone", widget: "string" }
-          - { label: "Phone (tel only digits)", name: "phoneTel", widget: "string" }
-
-          - label: "Address Lines"
-            name: "addressLines"
-            widget: "list"
-            field: { label: "Line", name: "line", widget: "string" }

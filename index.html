@@ -4,24 +4,7 @@
 <link rel="stylesheet" href="css/styles.css">
 
 <!-- Google Tag Manager -->
-<script>
-(async function () {
-  try {
-    const res = await fetch('/data/homepage.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error('homepage.json not found (HTTP ' + res.status + ')');
-    const data = await res.json();
 
-    // HERO
-    if (data.heroKicker) document.getElementById('heroKicker').textContent = data.heroKicker;
-    if (data.heroTitle)  document.getElementById('heroTitle').textContent  = data.heroTitle;
-    if (data.heroSub)    document.getElementById('heroSub').textContent    = data.heroSub;
-    if (data.tagline)    document.getElementById('tagline').textContent    = data.tagline;
-
-  } catch (err) {
-    console.warn('Homepage CMS data not loaded:', err);
-  }
-})();
-</script>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -29,11 +12,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MQKCQ58T');</script>
 <!-- End Google Tag Manager -->
 <meta name="google-site-verification" content="UdbprWXQw126t-_d-QKHgYbHVI9RJ-9Qx7F8nPw71XA" />
-<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQKCQ58T"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
-
-​<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQKCQ58T"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
-
-<meta name="google-site-verification" content="UdbprWXQw126t-_d-QKHgYbHVI9RJ-9Qx7F8nPw71XA" />
+​<meta name="google-site-verification" content="UdbprWXQw126t-_d-QKHgYbHVI9RJ-9Qx7F8nPw71XA" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dream Laser Innovations LLC | Precision Laser Engraving</title>
@@ -187,53 +166,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQKCQ58T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
 <section class="hero">
-  <div class="wrap hero-grid">
-<div class="pill" id="heroKicker">PROFESSIONAL INDUSTRIAL & HIGH-END LASER ENGRAVING</div>
-<h1 id="heroTitle">Precision Laser Engraving for Industrial & Custom Applications</h1>
-<p id="heroSub">High-accuracy engraving and cutting across metals...</p>
-<div class="micro" id="tagline">Industrial • Contract • High-End Custom</div>
-    <!-- LEFT: BIG IMAGE -->
-    <div class="hero-media">
-      <img src="work1.png" alt="Laser engraving on stone" />
-    </div>
-
-    <!-- RIGHT: BIG HEADLINE -->
-    <div class="hero-copy">
-      <div class="pill">PROFESSIONAL INDUSTRIAL & HIGH-END LASER ENGRAVING</div>
-      <h1>Precision Laser Engraving for Industrial & Custom Applications</h1>
-      <p>High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers — built for clean results, tight tolerances, and consistent quality.</p>
-
-      <div class="cta-row">
-        <a class="cta" href="#quote">Request a Quote</a>
-        <a class="cta secondary" href="tel:+18126692033">Call / Text +1 (812) 669-2033</a>
+  <div class="wrap">
+    <div class="hero-grid">
+      <!-- LEFT: BIG IMAGE -->
+      <div class="hero-media">
+        <img src="work1.png" alt="Laser engraving on stone" />
       </div>
 
-      <div class="micro">We respond within 24 hours</div>
+      <!-- RIGHT: HERO COPY -->
+      <div class="card hero-left hero-copy">
+        <div class="kicker"><span class="dot"></span><span id="heroKicker">Professional Industrial & High-End Laser Engraving</span></div>
+        <h1 id="heroTitle">Precision Laser Engraving for Industrial & Custom Applications</h1>
+        <p class="sub" id="heroSub">High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers — built for clean results, tight tolerances, and consistent quality.</p>
+
+        <div class="hero-actions">
+          <a class="cta" href="#quote">Request a Quote</a>
+          <a class="cta secondary" href="tel:+18126692033" id="phoneCta">Call / Text +1 (812) 669-2033</a>
+        </div>
+
+        <div class="mini" id="tagline">Industrial • Contract • High-End Custom</div>
+
+        <div class="trust-row" id="trustRow" aria-label="Trust points">
+          <div class="pill">Industrial-grade fiber laser systems</div>
+          <div class="pill">Tight tolerances & repeatable results</div>
+          <div class="pill">Short-run to contract-ready capability</div>
+        </div>
+
+        <!-- Logo card under right hero -->
+        <div class="card logo-card" style="margin-top:16px;">
+          <img src="/uploads/logo.png" alt="Dream Laser Innovations LLC logo" class="hero-logo" loading="lazy">
+        </div>
+      </div>
     </div>
-  <!-- Logo card under hero -->
-<div class="card logo-card">
-  <img 
-    src="/uploads/logo.png"
-    alt="Dream Laser Innovations LLC logo"
-    class="hero-logo"
-  >
-</div>
 
+    <!-- BELOW HERO: THE TWO CARDS (split) -->
+    <div class="hero-cards">
+      <div class="card box">
+        <h3 style="margin:0 0 8px;">Trusted by Manufacturers & Brands</h3>
+        <p class="muted" style="margin:0 0 10px;">Precision marking that meets specs and looks professional.</p>
+        <div class="muted"><b>Materials:</b> Stainless • Aluminum • Coated metals • Wood • Glass • Stone • Polymers</div>
+      </div>
 
-</div>
-
-  <!-- BELOW HERO: THE TWO CARDS (split) -->
-  <div class="wrap hero-cards">
-    <div class="card">
-      <h3>Trusted by Manufacturers & Brands</h3>
-      <p>Precision marking that meets specs and looks professional.</p>
-      <div class="muted"><b>Materials:</b> Stainless • Aluminum • Coated metals • Wood • Glass • Stone • Polymers</div>
-    </div>
-
-    <div class="card">
-      <h3>Get started</h3>
-      <p>Send details + artwork (optional). We’ll confirm feasibility, timeline, and pricing.</p>
+      <div class="card box">
+        <h3 style="margin:0 0 8px;">Get started</h3>
+        <p class="muted" style="margin:0;">Send details + artwork (optional). We’ll confirm feasibility, timeline, and pricing.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -285,35 +264,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   
   <!-- Latest News (auto-pulls newest 3 posts from /feed.xml) -->
-  <section class="latest-news" id="latest-news">
-    <div class="wrap">
-      <div class="head">
-        <div>
-          <h2>Latest News</h2>
-          <div class="muted">Fresh tips, material spotlights, and real jobs from Franklin, IN.</div>
-        </div>
-        <a class="seeall" href="/posts/">See all posts →</a>
+<section class="latest-news" id="latest-news">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <h2>Latest News</h2>
+        <div class="muted">Fresh tips, material spotlights, and real jobs from Franklin, IN.</div>
       </div>
-
-      <div class="post-grid" style="margin-top:14px;">
-        {%- for post in collections.posts | slice(0, 3) -%}
-          <a class="post-card" href="{{ post.url }}">
-            {%- if post.data.image -%}
-              <div class="img"><img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy"></div>
-            {%- else -%}
-              <div class="img"><img src="/images/instagram-blog-template.jpg" alt="{{ post.data.title }}" loading="lazy"></div>
-            {%- endif -%}
-            <div class="body">
-              <div class="meta"><span class="badge">New</span><span>{{ post.date | date("MMM dd, yyyy") }}</span></div>
-              <h3>{{ post.data.title }}</h3>
-              <p>{{ post.data.description or 'Read the full post →' }}</p>
-              <div class="footer"><span class="muted">Dream Laser Innovations</span><span class="read">Read →</span></div>
-            </div>
-          </a>
-        {%- endfor -%}
-      </div>
+      <a class="seeall" href="/posts/">See all posts →</a>
     </div>
-  </section>
+
+    <div id="homePostsLoading" class="muted" style="margin-top:14px;">Loading latest posts…</div>
+    <div id="homePosts" class="post-grid" style="margin-top:14px;"></div>
+  </div>
+</section>
 <footer><div class="wrap"><div class="footer-grid">
     <div>
 <br/><img src="/uploads/logo.png" alt="Dream Laser Innovations LLC logo" class="footer-logo" loading="lazy">
