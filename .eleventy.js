@@ -1,3 +1,4 @@
+const { DateTime } = require("luxon");
 module.exports = function(eleventyConfig) {
   // Copy static assets straight through
   eleventyConfig.addPassthroughCopy("images");
@@ -21,6 +22,14 @@ module.exports = function(eleventyConfig) {
 
 
   // Filters
+  // Nunjucks/Liquid-friendly date filter (fixes: "filter not found: date")
+  eleventyConfig.addFilter("date", (dateObj, format = "MMM dd, yyyy") => {
+    try {
+      return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(format);
+    } catch (e) {
+      return "";
+    }
+  });
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     try {
       return new Intl.DateTimeFormat("en-US", { year: "numeric", month: "short", day: "numeric" }).format(dateObj);
