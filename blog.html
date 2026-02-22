@@ -50,7 +50,7 @@
             <div class="body">
               <div class="meta">
                 <span class="badge">New</span>
-                <span>{{ post.date | date("MMM dd, yyyy") }}</span>
+                <span>{{ post.date | date: "%b %d, %Y" }}</span>
               </div>
               <h3>{{ post.data.title }}</h3>
               <p>{{ post.data.excerpt or post.data.description or 'Read the full post →' }}</p>
