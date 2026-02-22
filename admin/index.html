@@ -1,33 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dream Laser Innovations — Admin</title>
-
-    <!-- Netlify Identity widget (required for git-gateway login) -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <style>
-      body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-      .loading { padding: 16px; color: #666; }
-    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin</title>
+    <!-- Load scripts AFTER parse so Decap can find #nc-root -->
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script defer src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
-    <div class="loading">Loading admin…</div>
-
-    <!-- Decap (Netlify) CMS -->
-    <script src="https://unpkg.com/decap-cms-app@^3/dist/decap-cms-app.js"></script>
-
+    <div id="nc-root"></div>
     <script>
-      // After successful login, return user to /admin/
+      // Auto-open Netlify Identity login
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", function(user) {
-          if (!user) {
-            window.netlifyIdentity.on("login", function() {
-              document.location.href = "/admin/";
-            });
-          }
+        window.netlifyIdentity.on("init", function (user) {
+          if (!user) window.netlifyIdentity.open();
+        });
+        window.netlifyIdentity.on("login", function () {
+          window.netlifyIdentity.close();
         });
       }
     </script>
