@@ -40,7 +40,7 @@
   <section>
     <div class="wrap">
       <div class="post-grid" aria-live="polite">
-        {%- for post in collections.posts -%}
+      {% if collections.posts.size == 0 %}
           <a class="post-card" href="{{ post.url }}">
             {%- if post.data.image -%}
               <div class="img"><img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy"></div>
