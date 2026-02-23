@@ -8,16 +8,12 @@
   <meta name="description" content="{% if description %}{{ description }}{% elif excerpt %}{{ excerpt | safe }}{% else %}{{ site.heroSub or site.description }}{% endif %}">
   <meta name="robots" content="index,follow" />
 
-  <!-- Keep your existing css files if you have them -->
+  <!-- ONE stylesheet only -->
   <link rel="stylesheet" href="/css/styles.css">
- 
-
-  <!-- NEW: wix-like base styling extracted from your homepage -->
 </head>
 
 <body>
 
-  <!-- Wix-like sticky topbar -->
   <div class="topbar">
     <div class="wrap">
       <div class="inner">
@@ -43,12 +39,10 @@
     </div>
   </div>
 
-  <!-- Page content -->
   <main>
     {{ content | safe }}
   </main>
 
-  <!-- Wix-like footer (matches your homepage footer content) -->
   <footer>
     <div class="wrap">
       <div class="footer-grid">
@@ -76,7 +70,6 @@
     </div>
   </footer>
 
-  <!-- Animations -->
   <script defer src="/js/reveal.js"></script>
 </body>
 </html>
