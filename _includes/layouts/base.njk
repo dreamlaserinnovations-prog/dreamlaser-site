@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if title %}{{ title }} | {% endif %}{{ site.companyName or site.name }}</title>
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
   <meta name="description" content="{% if description %}{{ description }}{% elif excerpt %}{{ excerpt | safe }}{% else %}{{ site.description }}{% endif %}">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/blog.css">
@@ -11,7 +11,7 @@
 <body class="site">
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="/">{{ site.companyName or site.name }}</a>
+      <a class="brand" href="/">{{ site.name }}</a>
       <nav class="nav">
         <a href="/">Home</a>
         <a href="/posts/">Blog</a>
@@ -28,7 +28,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; {{ "now" | date("yyyy") }} {{ site.companyName or site.name }}. All rights reserved.</p>
+      <p>&copy; {{ "now" | date("yyyy") }} {{ site.name }}. All rights reserved.</p>
     </div>
   </footer>
 </body>

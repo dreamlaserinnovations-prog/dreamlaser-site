@@ -67,5 +67,7 @@
       "image": "",
       "label": "Add image 6"
     }
-  ]
+  ],
+  "logo": "/uploads/logo.png",
+  "heroImage": ""
 }
