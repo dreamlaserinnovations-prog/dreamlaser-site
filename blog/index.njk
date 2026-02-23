@@ -1,11 +1,11 @@
 ---
 layout: layouts/base.njk
 title: Blog
-permalink: /blog/
 pagination:
   data: collections.posts
   size: 12
   reverse: true
+permalink: "blog{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
 ---
 
 <section class="wrap" style="padding:22px 0;">
