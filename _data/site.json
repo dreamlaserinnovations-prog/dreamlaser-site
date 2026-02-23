@@ -5,7 +5,7 @@
   "heroTitle": "Precision Laser Engraving for Industrial & Custom Applications",
   "heroSub": "High-accuracy engraving and cutting across metals, wood, glass, stone, and polymers \u2014 built for clean results, tight tolerances, and consistent quality.",
   "phone": "+1 (812) 669-2033",
-  "phoneTel": "+18126692033",
+  "phoneTel": "18126692033",
   "email": "dreamlaserinnovations@gmail.com",
   "addressLines": [
     "324 W Madison St",
@@ -44,30 +44,30 @@
   ],
   "gallery": [
     {
-      "image": "",
-      "label": "Add image 1"
+      "image": "/images/work19.png",
+      "label": "Precision Letaher Engraving"
     },
     {
-      "image": "",
-      "label": "Add image 2"
+      "image": "/images/work9.png",
+      "label": "Ultra micro detail engraving"
     },
     {
-      "image": "",
-      "label": "Add image 3"
+      "image": "/images/work8.png",
+      "label": "Industrial Metal Engraving Equipment"
     },
     {
-      "image": "",
-      "label": "Add image 4"
+      "image": "/images/work7.png",
+      "label": "High End Glass Laser Etching"
     },
     {
-      "image": "",
-      "label": "Add image 5"
+      "image": "/images/work11.png",
+      "label": "Custom Branding High Quality Standards"
     },
     {
-      "image": "",
-      "label": "Add image 6"
+      "image": "/images/work2.png",
+      "label": "Custom Artwork Design/Consistent Quality Checks"
     }
   ],
   "logo": "/uploads/logo.png",
-  "heroImage": ""
+"heroImage": "/uploads/Work1.png"
 }

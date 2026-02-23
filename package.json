@@ -8,7 +8,7 @@
     "luxon": "^3.5.0"
   },
   "scripts": {
-    "build": "eleventy",
+    "build": "npx @11ty/eleventy",
     "dev": "eleventy --serve"
   }
 }
