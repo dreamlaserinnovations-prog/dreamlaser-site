@@ -5,67 +5,19 @@ backend:
 media_folder: "uploads"
 public_folder: "/uploads"
 
-publish_mode: simple
-
 collections:
-  # SITE / HOMEPAGE (JSON)
-  - name: "site"
-    label: "Site Content"
-    files:
-      - file: "data/site.json"
-        label: "Homepage + Site"
-        name: "site"
-        fields:
-          - { label: "Company Name", name: "companyName", widget: "string" }
-          - { label: "Tagline", name: "tagline", widget: "string", required: false }
-          - { label: "Hero Kicker", name: "heroKicker", widget: "string", required: false }
-          - { label: "Hero Title", name: "heroTitle", widget: "string" }
-          - { label: "Hero Sub (paragraph)", name: "heroSub", widget: "text" }
-          - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
-          - { label: "Logo Image", name: "logo", widget: "image", required: false }
-          - label: "Trust Pills"
-            name: "trustPills"
-            widget: "list"
-            allow_add: true
-          - label: "Services"
-            name: "services"
-            widget: "list"
-            allow_add: true
-          - label: "Materials"
-            name: "materials"
-            widget: "list"
-            allow_add: true
-          - label: "Gallery"
-            name: "gallery"
-            widget: "list"
-            fields:
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Label", name: "label", widget: "string", required: false }
-          - label: "Reviews"
-            name: "reviews"
-            widget: "list"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Text", name: "text", widget: "string" }
-          - { label: "Phone (display)", name: "phone", widget: "string" }
-          - { label: "Phone (tel digits)", name: "phoneTel", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - label: "Address Lines"
-            name: "addressLines"
-            widget: "list"
-            allow_add: true
-
-  # BLOG POSTS (Markdown files in /posts)
-  - name: "posts"
+  - name: "blog"
     label: "Blog Posts"
     folder: "posts"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     extension: "md"
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
-      - { label: "Description (optional)", name: "description", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: ["posts"] }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/post.njk" }
       - { label: "Body", name: "body", widget: "markdown" }

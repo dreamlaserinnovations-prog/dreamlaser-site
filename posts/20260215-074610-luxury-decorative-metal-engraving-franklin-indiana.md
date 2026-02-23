@@ -5,6 +5,8 @@ permalink: "/posts/20260215-074610-luxury-decorative-metal-engraving-franklin-in
 excerpt: "Craftsmanship meets artistry in Franklin, Indiana"
 image: "/images/blog/Work2.png"
 date: 2026-02-15T07:46:10-05:00
+tags: ["posts"]
+description: "Craftsmanship meets artistry in Franklin, Indiana"
 ---
 <article>
   <header>

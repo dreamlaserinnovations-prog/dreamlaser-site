@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: Blog
+permalink: /blog/
+pagination:
+  data: collections.posts
+  size: 12
+  reverse: true
+---
+
+<section class="wrap" style="padding:22px 0;">
+  <div class="card box" data-reveal>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <h1 style="margin:0;">Latest News</h1>
+      <a class="cta secondary" href="/">← Back to site</a>
+    </div>
+
+    {% if pagination.items | length == 0 %}
+      <p class="micro" style="margin-top:10px;">No posts yet.</p>
+    {% else %}
+      <div class="posts-grid" style="margin-top:12px;">
+        {% for post in pagination.items %}
+          <a class="post-card" href="{{ post.url }}" data-reveal>
+            <div class="post-img">
+              {% if post.data.image %}
+                <img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy">
+              {% endif %}
+            </div>
+            <div class="post-pad">
+              <div class="post-meta">{{ post.date | date("MMM dd, yyyy") }}</div>
+              <div class="post-title">{{ post.data.title }}</div>
+              {% if post.data.description %}
+                <p class="post-excerpt">{{ post.data.description }}</p>
+              {% endif %}
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>

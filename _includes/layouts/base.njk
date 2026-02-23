@@ -1,35 +1,83 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
-  <meta name="description" content="{% if description %}{{ description }}{% elif excerpt %}{{ excerpt | safe }}{% else %}{{ site.description }}{% endif %}">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.companyName or site.name }}</title>
+  <meta name="description" content="{% if description %}{{ description }}{% elif excerpt %}{{ excerpt | safe }}{% else %}{{ site.heroSub or site.description }}{% endif %}">
+  <meta name="robots" content="index,follow" />
+
+  <!-- Keep your existing css files if you have them -->
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/blog.css">
-</head>
-<body class="site">
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="/">{{ site.name }}</a>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/posts/">Blog</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="site-main">
-    <div class="container">
-      {{ content | safe }}
+  <!-- NEW: wix-like base styling extracted from your homepage -->
+  <link rel="stylesheet" href="/css/wix-shell.css">
+</head>
+
+<body>
+
+  <!-- Wix-like sticky topbar -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="inner">
+        <a class="brand" href="/">
+          {% if site.logo %}<img src="{{ site.logo }}" alt="{{ site.companyName }} logo">{% endif %}
+          <div>
+            <div>{{ site.companyName }}</div>
+            <div class="sub">{{ site.tagline }}</div>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="/#services">Services</a>
+          <a href="/#latest">Latest News</a>
+          <a href="/#work">Work</a>
+          <a href="/#reviews">Reviews</a>
+          <a href="/#process">Process</a>
+          <a href="/#quote">Request a Quote</a>
+          <a href="/blog/">Blog</a>
+          <a href="/admin/">Admin</a>
+        </nav>
+      </div>
     </div>
+  </div>
+
+  <!-- Page content -->
+  <main>
+    {{ content | safe }}
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; {{ "now" | date("yyyy") }} {{ site.name }}. All rights reserved.</p>
+  <!-- Wix-like footer (matches your homepage footer content) -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          {% if site.logo %}<img src="{{ site.logo }}" alt="{{ site.companyName }} logo">{% endif %}
+          <div>
+            <b style="color:var(--text);">{{ site.companyName }}</b><br/>
+            {{ site.phone }}<br/>
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a><br/>
+            {% if site.addressLines %}
+              {% for line in site.addressLines %}{{ line }}<br/>{% endfor %}
+            {% endif %}
+            <div style="margin-top:12px;color:var(--muted);font-size:13px;">
+              © {{ "now" | date("yyyy") }} {{ site.companyName }}.
+            </div>
+          </div>
+        </div>
+
+        <div class="links">
+          <a href="/blog/">Blog</a>
+          <a href="/admin/">Admin</a>
+          <div style="margin-top:12px;" class="micro">Built for speed • No monthly hosting fees</div>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <!-- Animations -->
+  <script defer src="/js/reveal.js"></script>
 </body>
 </html>

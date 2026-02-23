@@ -1,0 +1,12 @@
+<section class="home-cards" id="home-cards">
+  <div class="cells-grid">
+    {% for c in homeCards.cards %}
+      <article class="cell-card" data-reveal>
+        {% if c.kicker %}<div class="kicker">{{ c.kicker }}</div>{% endif %}
+        <h3>{{ c.title }}</h3>
+        {% if c.text %}<p class="muted">{{ c.text }}</p>{% endif %}
+        {% if c.href %}<a class="card-link" href="{{ c.href }}">{{ c.linkText or "Learn more" }}</a>{% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,241 @@
+
+---
+layout: layouts/base.njk
+title: Home
+---
+
+          <nav class="nav" aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#latest">Latest News</a>
+          <a href="#work">Work</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#process">Process</a>
+          <a href="#quote">Request a Quote</a>
+          <a href="/admin/">Admin</a>
+     
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <!-- LEFT: big image -->
+        <div class="card hero-media">
+          <img src="{{ site.heroImage }}" alt="Laser engraving example" loading="eager">
+        </div>
+
+        <!-- RIGHT: copy + stacked cards (includes mini form) -->
+        <div class="card hero-copy">
+          <div class="pill"><span class="dot"></span> {{ site.heroKicker }}</div>
+          <h1>{{ site.heroTitle }}</h1>
+          <p class="lead">{{ site.heroSub }}</p>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a class="cta" href="#quote">Request a Quote</a>
+            <a class="cta secondary" href="tel:+{{ site.phoneTel }}">Call / Text {{ site.phone }}</a>
+          </div>
+          <div class="micro">We respond within 24 hours</div>
+
+          <div class="trust-row">
+            {% for p in site.trustPills %}
+              <div class="trust-pill">{{ p }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="hero-right-stack">
+            <div class="mini-card">
+              <b>Trusted by Manufacturers & Brands</b>
+              <div class="micro">Precision marking that meets specs and looks professional.</div>
+            </div>
+
+            <div class="mini-card">
+              <b>Get started</b>
+              <div class="micro">Send details + artwork (optional). We’ll confirm feasibility, timeline, and pricing.</div>
+
+              <!-- MINI FORM (inside hero) -->
+              <form class="mini-form" name="hero-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html">
+                <input type="hidden" name="form-name" value="hero-quote">
+                <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
+
+                <div>
+                  <label for="hq_email">Email</label>
+                  <input id="hq_email" name="email" type="email" required>
+                </div>
+                <div>
+                  <label for="hq_details">Project details</label>
+                  <textarea id="hq_details" name="details" placeholder="Material, size, qty, deadline..."></textarea>
+                </div>
+                <button class="cta" type="submit">Get Quote</button>
+              </form>
+            </div>
+
+            {% if site.logo %}
+            <div class="mini-card" style="display:flex;align-items:center;justify-content:center;">
+              <img src="{{ site.logo }}" alt="{{ site.companyName }} logo" style="max-width:180px;width:100%;height:auto;">
+            </div>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="card box">
+          <h2>Services</h2>
+          <p class="micro">Industrial, contract, and custom engraving delivered with clean results and consistent execution.</p>
+          <ul>
+            {% for s in site.services %}<li>{{ s }}</li>{% endfor %}
+          </ul>
+        </div>
+        <div class="card box">
+          <h2>Materials We Engrave</h2>
+          <p class="micro">We tailor settings by substrate to maximize contrast, crispness, and repeatability.</p>
+          <ul>
+            {% for m in site.materials %}<li>{{ m }}</li>{% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="latest">
+    <div class="wrap">
+      <div class="card box">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+          <h2 style="margin:0;">Latest News</h2>
+          <a class="cta secondary" href="/blog/">View all posts</a>
+        </div>
+
+        {% set latestPosts = collections.posts | slice(0,3) %}
+        {% if latestPosts | length == 0 %}
+          <p class="micro" style="margin-top:10px;">No posts yet.</p>
+        {% else %}
+          <div class="posts-grid">
+            {% for post in latestPosts %}
+              <a class="post-card" href="{{ post.url }}" data-reveal>
+                <div class="post-img">
+                  {% if post.data.image %}
+                    <img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy">
+                  {% endif %}
+                </div>
+                <div class="post-pad">
+                  <div class="post-meta">{{ post.date | date("MMM dd, yyyy") }}</div>
+                  <div class="post-title">{{ post.data.title }}</div>
+                  <p class="post-excerpt">{{ post.templateContent | excerpt }}</p>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="card box">
+        <h2>Recent Work</h2>
+        <div class="gallery" aria-label="Work gallery">
+          {% for g in site.gallery %}
+            <div class="ph">
+              <img src="{{ g.image }}" alt="{{ g.label or 'Work sample' }}" loading="lazy">
+              {% if g.label %}<div class="label">{{ g.label }}</div>{% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <div class="card box">
+        <h2>Reviews</h2>
+        <div class="reviews">
+          {% for r in site.reviews %}
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>“{{ r.text }}”</p>
+              <b>— {{ r.name }}</b>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="card box">
+        <h2>How It Works</h2>
+        <p class="micro">Simple, clear, and fast—designed to reduce friction and get you to a quote.</p>
+
+        <div class="steps">
+          <div class="step"><div class="num">1</div><b>Send details</b><div class="micro">Material, size, quantity, deadline, and any artwork (optional).</div></div>
+          <div class="step"><div class="num">2</div><b>Review proof + pricing</b><div class="micro">We confirm feasibility, timeline, and cost before production.</div></div>
+          <div class="step"><div class="num">3</div><b>Precision engraving</b><div class="micro">Settings tuned per substrate for crisp detail and consistency.</div></div>
+          <div class="step"><div class="num">4</div><b>Delivery / pickup</b><div class="micro">We coordinate the best option for your project and schedule.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote">
+    <div class="wrap">
+      <div class="card box">
+        <h2>Request a Quote</h2>
+        <p class="micro">Send project details below — we respond within 24 hours.</p>
+
+        <form class="full-form" name="quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html" enctype="multipart/form-data">
+          <input type="hidden" name="form-name" value="quote">
+          <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
+
+          <div>
+            <label for="firstName">First name</label>
+            <input id="firstName" name="firstName" autocomplete="given-name" required />
+          </div>
+
+          <div>
+            <label for="lastName">Last name</label>
+            <input id="lastName" name="lastName" autocomplete="family-name" required />
+          </div>
+
+          <div>
+            <label for="company">Company (optional)</label>
+            <input id="company" name="company" autocomplete="organization" />
+          </div>
+
+          <div>
+            <label for="phone">Phone number (optional)</label>
+            <input id="phone" name="phone" autocomplete="tel" inputmode="tel" />
+          </div>
+
+          <div class="full">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="full">
+            <label for="details">Project details (material, size, quantity, deadline)</label>
+            <textarea id="details" name="details"></textarea>
+          </div>
+
+          <div class="full">
+            <label for="file">Photo / File upload (optional — max 15MB)</label>
+            <input id="file" name="file" type="file" />
+          </div>
+
+          <div class="form-actions">
+            <button class="cta" type="submit">Request a Quote</button>
+            <a class="cta secondary" href="tel:+{{ site.phoneTel }}">Call / Text {{ site.phone }}</a>
+            <span class="micro">Or email: <a href="mailto:{{ site.email }}"><b>{{ site.email }}</b></a></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+<script>
+  document.querySelectorAll('.card, .trust-pill, .mini-card, .post-card, .ph, .quote, .step')
+    .forEach(el => el.setAttribute('data-reveal',''));
+</script>

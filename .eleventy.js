@@ -8,6 +8,7 @@ eleventyConfig.addPassthroughCopy("work1.png");
   eleventyConfig.ignores.add("dist/**");
 
   // Static assets
+eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("css");
